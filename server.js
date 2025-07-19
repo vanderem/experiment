@@ -3,7 +3,7 @@ const app = express();
 const fs = require('fs');
 const path = require('path');
 
-app.use(express.static('experiment'));
+app.use(express.static('experimento'));
 app.use(express.json());
 
 app.post('/data', (req, res) => {
