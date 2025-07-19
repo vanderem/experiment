@@ -1,0 +1,5 @@
+participant_id,text_id,text_authorship,naturalidade,clareza,compreensao
+etf2b33s,human_opinion_1,human,4.0,5.0,6.0
+etf2b33s,ai_description_1,AI,4.0,2.0,3.0
+etf2b33s,human_news_1,human,2.0,4.0,6.0
+etf2b33s,ai_news_1,AI,3.0,4.0,1.0

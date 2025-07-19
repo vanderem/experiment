@@ -1,0 +1,5 @@
+participant_id,text_id,text_authorship,mean,std,count
+etf2b33s,ai_description_1,AI,49.0,,1
+etf2b33s,ai_news_1,AI,48.0,,1
+etf2b33s,human_news_1,human,53.0,,1
+etf2b33s,human_opinion_1,human,52.0,,1

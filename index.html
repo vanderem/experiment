@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sintonia Invisível: Processamento e Julgamento de Textos Algorítmicos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- jsPsych core via CDN -->
+    <script src="https://unpkg.com/jspsych"></script>
+    <link href="https://unpkg.com/jspsych/css/jspsych.css" rel="stylesheet" type="text/css">
+
+    <!-- jsPsych plugins via CDN -->
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-multi-choice"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-iat-html"></script>
+    <script src="https://unpkg.com/@jspsych/extension-webgazer@1.2.0"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-webgazer-init-camera"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-webgazer-calibrate"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-webgazer-validate"></script>
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+    <script>
+        // Sobrescreve a função original do WebGazer para sempre adicionar timestamp se faltar
+        if (window.webgazer) {
+            const originalGetCurrentPrediction = window.webgazer.getCurrentPrediction;
+            window.webgazer.getCurrentPrediction = function() {
+                return originalGetCurrentPrediction.apply(this, arguments).then(pred => {
+                    if (pred && typeof pred.t === "undefined") {
+                        pred.t = performance.now();
+                    }
+                    return pred;
+                });
+            };
+        }
+    </script>
+
+    <!-- Estilos personalizados -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Scripts personalizados -->
+    <script src="js/texts.js"></script>
+    <script src="js/self-paced-reading.js"></script>
+    <script src="js/eye-tracking.js"></script>
+    <script src="js/iat-stimuli.js"></script>
+    <script src="js/iat.js"></script>
+    <script src="js/evaluation.js"></script>
+    <script src="js/debug.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <div id="jspsych-target"></div>
+</body>
+</html>
+

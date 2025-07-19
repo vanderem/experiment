@@ -1,0 +1,85 @@
+{
+  "texts": [
+    {
+      "id": "ai_news_1",
+      "content": "O avanço da inteligência artificial tem transformado diversos setores da economia global. Empresas de tecnologia investem bilhões em pesquisa e desenvolvimento de novos algoritmos capazes de automatizar tarefas complexas. Especialistas apontam que, nos próximos cinco anos, veremos uma revolução sem precedentes na forma como interagimos com máquinas. Entretanto, questões éticas sobre privacidade e substituição de empregos continuam sendo debatidas por governos e sociedade civil.",
+      "authorship": "AI",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 62
+    },
+    {
+      "id": "human_news_1",
+      "content": "A crise climática exige ações imediatas dos líderes mundiais, alertam cientistas em novo relatório divulgado ontem. O documento, que analisou dados de temperatura dos últimos 50 anos, revela um aumento alarmante nas médias globais. Comunidades costeiras já enfrentam consequências diretas, com elevação do nível do mar e eventos climáticos extremos. Ativistas cobram compromissos mais ambiciosos na próxima conferência internacional, prevista para outubro.",
+      "authorship": "human",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 60
+    },
+    {
+      "id": "ai_opinion_1",
+      "content": "Acredito que as redes sociais estão redefinindo nossa capacidade de conexão humana, mas não necessariamente para melhor. Passamos horas consumindo conteúdo fragmentado, criando uma ilusão de proximidade que raramente se traduz em vínculos significativos. A dopamina das curtidas substitui gradualmente a satisfação das conversas profundas. Precisamos questionar: estamos realmente mais conectados ou apenas mais distraídos com a tecnologia?",
+      "authorship": "AI",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 58
+    },
+    {
+      "id": "human_opinion_1",
+      "content": "Não aguento mais essa história de que jovens não sabem o que querem. Cresci ouvindo que minha geração era preguiçosa e mimada, mas somos nós que enfrentamos um mercado de trabalho precarizado, moradia inacessível e uma crise climática que herdamos. Se estamos questionando o modelo tradicional de carreira e consumo, não é por falta de direção, mas por termos clareza sobre o que não queremos repetir. Está na hora de ouvir mais e julgar menos.",
+      "authorship": "human",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 70
+    },
+    {
+      "id": "ai_description_1",
+      "content": "O relógio antigo repousa sobre a lareira de mármore, seus ponteiros de bronze movendo-se em ritmo constante. A madeira escura da caixa contrasta com os detalhes dourados ao redor do mostrador, onde números romanos marcam as horas com elegância clássica. Pequenas rachaduras no vidro contam histórias de décadas passadas, enquanto o pêndulo balança em movimento hipnótico, preenchendo a sala com seu tique-taque suave e reconfortante.",
+      "authorship": "AI",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 63
+    },
+    {
+      "id": "human_description_1",
+      "content": "A praça do bairro desperta lentamente com o sol da manhã. Bancos de madeira desgastada acolhem os primeiros visitantes – senhores com jornais dobrados e mães com carrinhos de bebê. No centro, a fonte jorra água cristalina que brilha contra o céu azul, enquanto pombos disputam migalhas deixadas por crianças apressadas a caminho da escola. As árvores antigas formam uma cobertura verde, suas sombras dançando no chão de pedras irregulares.",
+      "authorship": "human",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 65
+    },
+    {
+      "id": "ai_instructions_1",
+      "content": "Para preparar um café coado perfeito, comece com grãos recém-moídos em granulação média. Aqueça água filtrada até 92°C – não deixe ferver completamente. Coloque o filtro de papel no suporte e enxágue com água quente para eliminar o gosto de papel. Adicione 15g de café para cada 250ml de água. Despeje água suficiente para umedecer o pó e aguarde 30 segundos para a extração inicial. Complete com o restante da água em movimentos circulares. Sirva imediatamente.",
+      "authorship": "AI",
+      "category": "instrucoes",
+      "style": "formal",
+      "word_count": 71
+    },
+    {
+      "id": "human_instructions_1",
+      "content": "Pra fazer brigadeiro do jeito certo, pega uma panela boa e mistura uma lata de leite condensado, 3 colheres de chocolate em pó e uma colher de manteiga. Leva pro fogo baixo e vai mexendo sem parar, viu? O segredo é não deixar grudar no fundo. Quando começar a desgrudar da panela e você conseguir ver o fundo quando passar a colher, tá pronto! Deixa esfriar um pouco, passa manteiga nas mãos e enrola. Depois é só passar no granulado.",
+      "authorship": "human",
+      "category": "instrucoes",
+      "style": "informal",
+      "word_count": 75
+    },
+    {
+      "id": "ai_story_1",
+      "content": "Ana fechou os olhos enquanto o trem avançava pelos campos. Vinte anos desde que partira, e agora retornava à cidade natal. Na mala, além de roupas, carregava memórias e o peso das escolhas feitas. O bilhete amassado indicava a estação final – um nome que tentara esquecer. Quando o condutor anunciou a próxima parada, seu coração acelerou. Pela janela, reconheceu o velho carvalho da infância. Algumas raízes, pensou, são impossíveis de cortar.",
+      "authorship": "AI",
+      "category": "contos",
+      "style": "formal",
+      "word_count": 67
+    },
+    {
+      "id": "human_story_1",
+      "content": "Guardei o último origami que meu avô me ensinou a fazer. Um tsuru azul, ligeiramente amassado nas pontas. Ele dizia que cada dobra era uma decisão, cada vinco uma consequência. \"A vida é assim\", falava com seu sotaque carregado, \"não dá pra desfazer sem deixar marcas\". Naquela tarde, suas mãos tremiam mais que o normal. O pássaro de papel ficou torto, imperfeito. Hoje entendo que aquele foi seu último presente – a beleza do que não precisa ser perfeito para voar.",
+      "authorship": "human",
+      "category": "contos",
+      "style": "informal",
+      "word_count": 76
+    }
+  ]
+}
+

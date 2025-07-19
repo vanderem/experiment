@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sintonia Invisível</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f5f5f5; margin: 0; padding: 0; }
+    #jspsych-content { max-width: 700px; margin: 40px auto; background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h2, h3 { color: #333; }
+    button.jspsych-btn { background-color: #4CAF50; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 1rem; }
+    button.jspsych-btn:hover { background-color: #45a049; cursor: pointer; }
+    .jspsych-survey-likert .jspsych-survey-likert-statement { margin-bottom: 10px; }
+    .jspsych-survey-likert .jspsych-survey-likert-opts { margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div id="jspsych-content"></div>
+  <script type="module">
+    import jsPsych from 'https://unpkg.com/jspsych/dist/jspsych.esm.js';
+    import htmlButtonResponse from 'https://unpkg.com/@jspsych/plugin-html-button-response';
+    import selfPacedReading from 'https://unpkg.com/@jspsych/plugin-self-paced-reading/dist/esm/index.js';
+    import surveyLikert from 'https://unpkg.com/@jspsych/plugin-survey-likert/dist/esm/index.js';
+    import webgazerCamera from 'https://unpkg.com/@jspsych/plugin-webgazer-camera/dist/esm/index.js';
+    import iatHtml from 'https://unpkg.com/@jspsych/plugin-iat-html/dist/esm/index.js';
+
+    async function startExperiment() {
+      // Carrega estímulos JSON fixo
+      const response = await fetch('./stimuli.json');
+      if (!response.ok) throw new Error('Não foi possível carregar stimuli.json');
+      const data = await response.json();
+      const stimuli = jsPsych.randomization.shuffle(data);
+
+      const timeline = [];
+
+      // 1. Instruções
+      timeline.push({
+        type: htmlButtonResponse,
+        stimulus: '<h2>Bem-vindo ao experimento</h2><p>Você irá ler uma série de textos e responder a diferentes tarefas.</p>',
+        choices: ['Iniciar'], data: { phase: 'instructions' }
+      });
+
+      // 2. Self-Paced Reading
+      const spTrials = stimuli.map(stim => ({
+        type: selfPacedReading,
+        stimuli: stim.text.split(/(?<=\.)\s+/),
+        data: { stim_id: stim.id, source: stim.source, phase: 'selfpaced' }
+      }));
+      timeline.push({ timeline: spTrials });
+
+      // 3. Eye-Tracking
+      const eyeTrials = stimuli.map(stim => ({
+        type: webgazerCamera,
+        stimulus: `<div style="max-width:600px; font-size:18px;">${stim.text}</div>`,
+        data: { stim_id: stim.id, source: stim.source, phase: 'eye-tracking' }
+      }));
+      timeline.push({ timeline: eyeTrials });
+
+      // 4. Julgamentos Subjetivos
+      const subjQuestions = [
+        { prompt: 'Quão natural você achou o texto?', labels: ['Nada natural','Muito natural'], required: true },
+        { prompt: 'Quão claro foi o texto?', labels: ['Nada claro','Muito claro'], required: true },
+        { prompt: 'Você compreendeu o conteúdo?', labels: ['Nada','Totalmente'], required: true }
+      ];
+      const subjTrials = stimuli.map(stim => ({
+        type: surveyLikert,
+        questions: subjQuestions,
+        preamble: `<strong>Texto ${stim.id}</strong><br><div style="max-width:600px;">${stim.text}</div>`,
+        data: { stim_id: stim.id, source: stim.source, phase: 'subjective' }
+      }));
+      timeline.push({ timeline: subjTrials });
+
+      // 5. IAT
+      const iatStimuli = {
+        category1: { name: ['Textos IA'], stimuli: stimuli.filter(s=>s.source==='IA').map(s=>s.text) },
+        category2: { name: ['Textos Humanos'], stimuli: stimuli.filter(s=>s.source==='Humano').map(s=>s.text) },
+        attribute1: { name: ['Positivo'], stimuli: ['bom','claro','natural','útil'] },
+        attribute2: { name: ['Negativo'], stimuli: ['ruim','confuso','artificial','inútil'] }
+      };
+      timeline.push({ type: iatHtml, stimuli: iatStimuli, data: { phase: 'IAT' } });
+
+      // 6. Identificação de autoria
+      const idTrials = stimuli.map(stim => ({
+        type: htmlButtonResponse,
+        stimulus: `<p><strong>Texto ${stim.id}</strong><br>${stim.text}</p>`,
+        choices: ['Humano','IA'], prompt: '<p>Quem escreveu?</p>',
+        data: { stim_id: stim.id, phase: 'authorship' }
+      }));
+      timeline.push({ timeline: idTrials });
+
+      // 7. Finalização
+      timeline.push({
+        type: htmlButtonResponse,
+        stimulus: '<h3>Obrigado por participar!</h3><p>Seu desempenho será registrado.</p>',
+        choices: ['Finalizar'], data: { phase: 'debrief' }
+      });
+
+      // Inicia
+      jsPsych.init({ timeline, display_element: 'jspsych-content', show_progress_bar: true });
+    }
+
+    startExperiment().catch(e => alert(e.message));
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Mínimo jsPsych</title>
+    <script src="https://unpkg.com/jspsych"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response"></script>
+    <link href="https://unpkg.com/jspsych/css/jspsych.css" rel="stylesheet" type="text/css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // Inicializa o jsPsych
+                const jsPsych = initJsPsych({
+                    on_finish: function() {
+                        console.log('Experimento concluído!');
+                    }
+                });
+                
+                // Cria uma timeline simples
+                const timeline = [];
+                
+                const welcome = {
+                    type: jsPsychHtmlButtonResponse,
+                    stimulus: '<h1>Bem-vindo ao Teste</h1><p>Clique em "Continuar" para prosseguir.</p>',
+                    choices: ['Continuar']
+                };
+                timeline.push(welcome);
+                
+                const goodbye = {
+                    type: jsPsychHtmlButtonResponse,
+                    stimulus: '<h1>Teste Concluído</h1><p>O teste foi concluído com sucesso!</p>',
+                    choices: ['Finalizar']
+                };
+                timeline.push(goodbye);
+                
+                // Inicia o experimento
+                jsPsych.run(timeline);
+                
+            } catch (error) {
+                console.error('Erro:', error);
+                document.getElementById('jspsych-target').innerHTML = `
+                    <div style="text-align: center; margin-top: 50px;">
+                        <h1>Erro ao carregar o experimento</h1>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="jspsych-target"></div>
+</body>
+</html>
+

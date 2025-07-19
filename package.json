@@ -1,0 +1,21 @@
+{
+  "name": "jspsych-experiment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@jspsych/extension-webgazer": "^1.2.0",
+    "@jspsych/plugin-html-button-response": "^2.1.0",
+    "@jspsych/plugin-html-keyboard-response": "^2.1.0",
+    "@jspsych/plugin-iat-html": "^2.1.0",
+    "@jspsych/plugin-survey-likert": "^2.1.0",
+    "@jspsych/plugin-survey-text": "^2.1.0",
+    "jspsych": "^8.2.1"
+  }
+}

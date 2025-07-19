@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste jsPsych</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- jsPsych core via CDN -->
+    <script src="https://unpkg.com/jspsych"></script>
+    <link href="https://unpkg.com/jspsych/css/jspsych.css" rel="stylesheet" type="text/css">
+
+    <!-- jsPsych plugins via CDN -->
+    <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-html-button-response"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-text"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-survey-likert"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-iat-html"></script>
+    <script src="https://unpkg.com/@jspsych/extension-webgazer"></script>
+    <script src="https://unpkg.com/@jspsych/plugin-webgazer-calibrate"></script>
+    
+    <script>
+        // Inicializa o experimento quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                console.log('Inicializando o experimento de teste...');
+                
+                // Inicializa o jsPsych
+                const jsPsych = initJsPsych ? initJsPsych({
+                    on_finish: function() {
+                        console.log('Experimento de teste concluído!');
+                    }
+                }) : null;
+                
+                if (!jsPsych) {
+                    throw new Error('jsPsych não foi inicializado corretamente. Verifique se a biblioteca foi carregada.');
+                }
+                
+                // Cria uma timeline simples para teste
+                const timeline = [];
+                
+                const welcome = {
+                    type: jsPsychHtmlButtonResponse,
+                    stimulus: `
+                        <h1>Bem-vindo ao Teste</h1>
+                        <p>Este é um teste simples para verificar se o jsPsych está funcionando corretamente.</p>
+                        <p>Clique em "Continuar" para prosseguir.</p>
+                    `,
+                    choices: ['Continuar']
+                };
+                timeline.push(welcome);
+                
+                const goodbye = {
+                    type: jsPsychHtmlButtonResponse,
+                    stimulus: `
+                        <h1>Teste Concluído</h1>
+                        <p>O teste foi concluído com sucesso!</p>
+                        <p>Isso confirma que o jsPsych está funcionando corretamente.</p>
+                    `,
+                    choices: ['Finalizar']
+                };
+                timeline.push(goodbye);
+                
+                // Inicia o experimento
+                console.log('Iniciando o experimento de teste...');
+                jsPsych.run(timeline);
+                
+            } catch (error) {
+                console.error('Erro ao inicializar o experimento de teste:', error);
+                document.getElementById('jspsych-target').innerHTML = `
+                    <div style="text-align: center; margin-top: 50px;">
+                        <h1>Erro ao carregar o experimento de teste</h1>
+                        <p>Ocorreu um erro ao inicializar o experimento. Por favor, verifique o console para mais detalhes.</p>
+                        <pre style="text-align: left; background: #f8f8f8; padding: 10px; border: 1px solid #ddd; margin: 20px; overflow: auto;">${error.message}\n${error.stack}</pre>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="jspsych-target"></div>
+</body>
+</html>
+

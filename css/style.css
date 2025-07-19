@@ -1,0 +1,298 @@
+/* Estilos personalizados para o experimento */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.jspsych-content-wrapper {
+  text-align: center;
+  position: relative;
+  display: flex;
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*min-height: 100vh;*/
+  /*text-align: center;*/
+}
+
+#jspsych-target {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#jspsych-content, #jspsych-target {
+  position: relative;
+  /*min-height: 100%;*/
+  /*height: 100%;*/
+  /*width: 100vw;*/
+  /*overflow: hidden;*/
+}
+
+/* Estilos para a leitura automonitorada */
+.reading-segment {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+/* Estilos para o eye tracking */
+.eye-tracking-text {
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+    padding: 30px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.iat-container {
+    /*background: #ffffff;*/
+    /*border-radius: 8px;*/
+    /*box-shadow: 0 2px 8px rgba(0,0,0,0.1);*/
+    /*padding: 5rem;*/
+    /*max-width: fit-content;*/
+    /*width: 100%;*/
+    /*box-sizing: content-box;*/
+    /*position: relative;*/
+}
+
+/*
+!* Estilos para o IAT *!
+.jspsych-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.iat-container {
+  !*background: #ffffff;*!
+  !*border-radius: 8px;*!
+  !*box-shadow: 0 2px 8px rgba(0,0,0,0.1);*!
+  padding: 5rem;
+  !*max-width: 700px;*!
+  !*width: 100%;*!
+  !*box-sizing: border-box;*!
+  !*position: relative;*!
+}
+
+.iat-stimulus {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5rem;
+}
+
+.iat-instructions {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.iat-category-labels {
+  display: flex;
+  justify-content: stretch;
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  align-items: center;
+}
+
+.iat-feedback {
+  color: red;
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+!*.iat-labels-container {*!
+!*    display: flex;*!
+!*    justify-content: space-between;*!
+!*    width: 80%; !* Ajuste a largura conforme necessário *!*!
+!*    margin-bottom: 200px; !* Espaço entre os rótulos e o estímulo *!*!
+!*    font-size: 1.2em; !* Tamanho da fonte dos rótulos *!*!
+!*    position: relative;*!
+!*    top: 15%; !* Posição a partir do topo *!*!
+!*}*!
+
+!*.iat-label-left {*!
+!*    text-align: center;*!
+!*}*!
+!*.iat-label-right {*!
+!*    text-align: center;*!
+!*}*!
+*/
+
+
+/* Contêiner dos rótulos de categoria superiores (esquerdo e direito) */
+/* Este seletor tenta atingir o primeiro div dentro de .jspsych-content-wrapper,
+   que geralmente contém os prompts do IAT. Se a estrutura HTML for diferente,
+   você precisará inspecionar o código fonte no navegador para encontrar a classe exata. */
+.jspsych-content-wrapper > div:first-child:has(.iat-stimulus) {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 200px;
+    box-sizing: border-box;
+}
+
+/* Rótulo da categoria esquerda (ex: "Press E for: Texto IA ou Positive") */
+/* Classe comum usada pelo plugin jsPsychIatHtml */
+.iat-left-category-prompt {
+    text-align: left; /* Alinha o texto à esquerda dentro de sua própria caixa */
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.5; /* Altura da linha para rótulos de múltiplas linhas */
+    max-width: 45%; /* Limita a largura para evitar sobreposição com o rótulo da direita */
+}
+
+/* Rótulo da categoria direita (ex: "Press I for: Texto Humano ou Negative") */
+/* Classe comum usada pelo plugin jsPsychIatHtml */
+.iat-right-category-prompt {
+    text-align: right; /* Alinha o texto à direita dentro de sua própria caixa */
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.5;
+    max-width: 45%; /* Limita a largura para evitar sobreposição com o rótulo da esquerda */
+}
+
+/* Feedback (o 'X' vermelho) */
+/* Esta classe ainda é referenciada no seu código JS (parâmetro html_when_wrong) */
+.iat-feedback {
+    color: red;
+    font-size: 4rem;
+    position: absolute; /* Posição absoluta para sobrepor o estímulo */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para o centro exato do elemento */
+    z-index: 10; /* Garante que fique acima de outros elementos na tela */
+}
+
+/* Instruções na parte inferior */
+/* Esta classe é gerada pelo jsPsych a partir do parâmetro 'bottom_instructions' */
+.jspsych-bottom-instructions { /* Classe comum usada pelo jsPsych para instruções inferiores */
+    font-size: 1rem;
+    color: #333;
+    width: 80%; /* Limita a largura para melhor legibilidade */
+    margin-top: 20px; /* Espaço do estímulo/feedback */
+    margin-bottom: 0; /* Remove margem inferior se houver */
+    text-align: center; /* Centraliza o texto das instruções */
+}
+
+
+
+/* Estilos para as escalas Likert */
+.jspsych-survey-likert-statement {
+    margin-bottom: 0;
+    font-size: 14ex;
+}
+
+.jspsych-survey-likert-opts {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+.jspsych-survey-likert-container {
+  padding: 0 !important; /* Remove padding extra */
+}
+
+.jspsych-survey-likert-question {
+  margin-bottom: 0 !important; /* Ajuste esse valor para reduzir o espaçamento */
+}
+
+/* Estilos para as instruções */
+.instructions {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #007bff;
+    margin: 20px auto;
+}
+
+/* Estilos para botões */
+.jspsych-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 5px;
+    transition: background-color 0.2s;
+}
+
+.jspsych-btn:hover {
+    background-color: #0069d9;
+}
+
+/* Estilos para o consentimento informado */
+.consent-form {
+    text-align: left;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+.consent-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.consent-section {
+    margin-bottom: 15px;
+}
+
+.consent-section-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Estilos para a calibração do eye tracking */
+.webgazer-calibration-point {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilos para feedback de validação do eye tracking */
+.validation-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.validation-point-prediction {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
