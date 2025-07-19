@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "description": "## Documentação do Projeto jsPsych - Experimento",
   "dependencies": {
     "@jspsych/extension-webgazer": "^1.2.0",
     "@jspsych/plugin-html-button-response": "^2.1.0",
@@ -16,6 +17,15 @@
     "@jspsych/plugin-iat-html": "^2.1.0",
     "@jspsych/plugin-survey-likert": "^2.1.0",
     "@jspsych/plugin-survey-text": "^2.1.0",
+    "express": "^5.1.0",
     "jspsych": "^8.2.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanderem/experiment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vanderem/experiment/issues"
+  },
+  "homepage": "https://github.com/vanderem/experiment#readme"
 }
