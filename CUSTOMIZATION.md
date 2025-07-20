@@ -804,5 +804,4 @@ function saveData(data) {
 
 Este guia de personalização fornece as informações necessárias para adaptar o experimento às suas necessidades específicas. Se precisar de ajuda adicional ou tiver dúvidas sobre personalizações mais avançadas, consulte a documentação oficial do jsPsych ou entre em contato com o desenvolvedor.
 
-Desenvolvido por Manus AI, 2025.
 

@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", async function() {
                 a.click();
                 URL.revokeObjectURL(url);
 
-                /*// salvar no servidor
-                fetch('http://localhost:3000/salvar-dados', {
+                // salvar no servidor
+                fetch('https://experimento-jp83.onrender.com/salvar-dados', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                     console.log("Dados enviados e salvos como:", result.filename);
                 }).catch(error => {
                     console.error("Erro ao enviar dados:", error);
-                });*/
+                });
 
             },
             extensions: [

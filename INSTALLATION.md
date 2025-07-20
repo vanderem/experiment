@@ -169,6 +169,3 @@ Para verificar se a instalação está funcionando corretamente:
 ---
 
 Para problemas não listados aqui, por favor, abra uma issue no repositório do projeto ou entre em contato com o desenvolvedor.
-
-Desenvolvido por Manus AI, 2025.
-

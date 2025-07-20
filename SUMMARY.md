@@ -65,5 +65,3 @@ O código foi desenvolvido seguindo boas práticas de programação e está bem 
 
 ---
 
-Desenvolvido por Manus AI, 2025.
-
