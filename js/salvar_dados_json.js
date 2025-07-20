@@ -4,10 +4,13 @@ const path = require('path');
 const app = express();
 const PORT = 3000; // ou 80/443 se for produção
 
+
 const cors = require('cors');
 app.use(cors());
 
 app.use(express.json());
+
+app.use(express.json({ limit: '5mb' }));
 
 // Garante que a pasta 'data' existe
 const dataDir = path.join(__dirname, 'data');
