@@ -18,10 +18,44 @@ document.addEventListener("DOMContentLoaded", async function() {
         // Inicializa o jsPsych
         jsPsych = initJsPsych({
             on_finish: function() {
-                // Salva os dados ao finalizar o experimento
-                jsPsych.data.displayData();
+
+                // Mostra os dados ao finalizar o experimento
+                //jsPsych.data.displayData();
                 console.log("Experimento concluído!");
-                // Aqui poderia ter código para enviar os dados para um servidor
+
+                // Salva os dados em um arquivo json
+                const participant_id = jsPsych.data.get().values()[0].participant_id;
+                const dataJSON = jsPsych.data.get().json();
+
+                //baixar localmente (fase de dev)
+                const blob = new Blob([dataJSON], {type: 'application/json'});
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `data/dados_participante_${participant_id}.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+
+                /*// salvar no servidor
+                fetch('http://localhost:3000/salvar-dados', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        participant_id: participant_id,
+                        data: dataJSON
+                    })
+                }).then(response => {
+                    if (!response.ok) throw new Error("Falha ao enviar dados");
+                    //console.log("Dados enviados com sucesso.");
+                    return response.json();
+                }).then(result => {
+                    console.log("Dados enviados e salvos como:", result.filename);
+                }).catch(error => {
+                    console.error("Erro ao enviar dados:", error);
+                });*/
+
             },
             extensions: [
                 {type: jsPsychExtensionWebgazer}
@@ -39,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         allTexts = await loadTexts();
         
         // Seleciona um subconjunto de textos para este participante
-        participantTexts = selectRandomTexts(allTexts, 10); // 10 textos por participante
+        participantTexts = selectRandomTexts(allTexts, 4); // 4 textos por participante
         
         // Constrói a timeline do experimento
         await buildTimeline();
@@ -75,10 +109,10 @@ async function buildTimeline() {
     addSelfPacedReadingPhase();
 
     // 4. Eye tracking
-    addEyeTrackingPhase();
+    //addEyeTrackingPhase();
 
     // 5. Teste de Associação Implícita (IAT)
-    await addIATPhase();
+    //await addIATPhase();
 
     // 6. Avaliações subjetivas e identificação de autoria
     addEvaluationPhase();
@@ -222,6 +256,7 @@ async function addIATPhase() {
     // Carrega estímulos do arquivo externo e gera trials
     const response = await fetch('texts/example_texts.json');
     const stimuli = await response.json();
+
     // Cria timeline do IAT a partir dos estímulos carregados
     const iatTimeline = await buildIATTrials(stimuli);
     // Insere todos os trials do IAT na timeline principal

@@ -379,7 +379,8 @@ function createFinalQuestionnaire() {
         },
         on_finish: function() {
             // Finaliza o experimento e salva os dados
-            jsPsych.data.displayData();
+            //jsPsych.data.displayData();
+            console.log("Experimento concluído!");
 
             // aqui adicionar código para
             // enviar os dados para um servidor ou salvá-los localmente

@@ -45,7 +45,7 @@ function checkModulesLoaded() {
         'shuffleArray',
         'implementSelfPacedReading',
         'implementEyeTracking',
-        'implementIAT',
+        'buildIATTrials',
         'implementEvaluations',
         'createFinalQuestionnaire'
     ];
