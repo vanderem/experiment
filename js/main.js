@@ -184,7 +184,7 @@ function addWelcomeAndConsent() {
         },
         on_finish: function(data) {
             // Se o participante não concordar, encerra o experimento
-            if (data.response == 1) {
+            if (data.response === 1) {
                 jsPsych.endExperiment("Obrigado pelo seu interesse. O experimento foi encerrado porque você não concordou com o termo de consentimento.");
             }
         }
