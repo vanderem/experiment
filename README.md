@@ -280,8 +280,3 @@ Os dados são armazenados em formato JSON e podem ser exportados para análise e
 2. Greenwald, A. G., McGhee, D. E., & Schwartz, J. L. K. (1998). Measuring individual differences in implicit cognition: The Implicit Association Test. Journal of Personality and Social Psychology, 74(6), 1464-1480.
 3. Papoutsaki, A., Sangkloy, P., Laskey, J., Daskalova, N., Huang, J., & Hays, J. (2016). WebGazer: Scalable webcam eye tracking using user interactions. Proceedings of the 25th International Joint Conference on Artificial Intelligence (IJCAI), 3839-3845.
 4. Just, M. A., & Carpenter, P. A. (1980). A theory of reading: From eye fixations to comprehension. Psychological Review, 87(4), 329-354.
-
----
-
-Desenvolvido por Manus AI, 2025.
-
