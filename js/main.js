@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", async function() {
                 a.click();
                 URL.revokeObjectURL(url);
 
+                console.log("Tamanho do JSON em caracteres:", dataJSON.length);
+                console.log("Aproximadamente em bytes:", new TextEncoder().encode(dataJSON).length);
+
                 // salvar no servidor
                 fetch('https://experimento-jp83.onrender.com/salvar-dados', {
                     method: 'POST',
