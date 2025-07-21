@@ -48,6 +48,7 @@ app.post('/salvar-dados', (req, res) => {
 
     // Salvar no bucket
     const { error } = await supabase.storage
+
         .from('dados-experimento') // nome do bucket
         .upload(filename, fileContent, {
             contentType: 'application/json',
