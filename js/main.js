@@ -28,26 +28,27 @@ document.addEventListener("DOMContentLoaded", async function() {
                 const dataJSON = jsPsych.data.get().json();
 
                 //baixar localmente (fase de dev)
-                const blob = new Blob([dataJSON], {type: 'application/json'});
+                /*const blob = new Blob([dataJSON], {type: 'application/json'});
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `data/dados_participante_${participant_id}.json`;
+                a.download = `dados_participante_${participant_id}.json`;
                 a.click();
-                URL.revokeObjectURL(url);
+                URL.revokeObjectURL(url);*/
 
                 console.log("Tamanho do JSON em caracteres:", dataJSON.length);
                 console.log("Aproximadamente em bytes:", new TextEncoder().encode(dataJSON).length);
 
                 // salvar no servidor
                 fetch('https://experimento-jp83.onrender.com/salvar-dados', {
+                //fetch('http://localhost:3000/salvar-dados', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         participant_id: participant_id,
-                        data: dataJSON
+                        data: JSON.parse(dataJSON)
                     })
                 }).then(response => {
                     if (!response.ok) throw new Error("Falha ao enviar dados");
@@ -112,10 +113,10 @@ async function buildTimeline() {
     addSelfPacedReadingPhase();
 
     // 4. Eye tracking
-    addEyeTrackingPhase();
+    //addEyeTrackingPhase();
 
     // 5. Teste de Associação Implícita (IAT)
-    await addIATPhase();
+    //await addIATPhase();
 
     // 6. Avaliações subjetivas e identificação de autoria
     addEvaluationPhase();
