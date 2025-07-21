@@ -91,6 +91,9 @@
     } else if (Array.isArray(stimuli.texts)) {
       itemsArray = stimuli.texts;
     }
+    if (itemsArray.length > 4) {
+      itemsArray = itemsArray.slice(0, 4); // Garante que só os 4 usados nas etapas anteriores serão considerados
+    }
     if (itemsArray) {
       ia_texts    = itemsArray.filter(t => t.authorship.toLowerCase() === 'ai').map(t => t.content);
       human_texts = itemsArray.filter(t => t.authorship.toLowerCase() === 'human').map(t => t.content);

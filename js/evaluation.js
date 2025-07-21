@@ -370,7 +370,7 @@ function createFinalQuestionnaire() {
                 <p>O objetivo deste estudo é investigar como as pessoas processam e avaliam textos gerados por humanos e por inteligência artificial.</p>
                 <p>Os dados coletados serão analisados de forma anônima e utilizados apenas para fins de pesquisa.</p>
                 <p>Se você tiver alguma dúvida sobre o estudo, entre em contato com o pesquisador responsável.</p>
-                <p>Você pode fechar esta janela agora.</p>
+                <p>Clique em finalizar e feche a janela</p>
             </div>
         `,
         choices: ['Finalizar'],
