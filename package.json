@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "start": "node salvar_dados_json.js"
+    "start": "node js/salvar_dados_json.js"
   },
   "keywords": [],
   "author": "",
