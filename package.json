@@ -17,6 +17,7 @@
     "@jspsych/plugin-iat-html": "^2.1.0",
     "@jspsych/plugin-survey-likert": "^2.1.0",
     "@jspsych/plugin-survey-text": "^2.1.0",
+    "@supabase/supabase-js": "^2.52.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "jspsych": "^8.2.1"
