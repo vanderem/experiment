@@ -25,11 +25,11 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Rota que recebe e salva os dados do experimento
-app.post('/salvar-dados', (req, res) => {
-    const { participant_id, data } = req.body;
+app.post('/salvar-dados', async (req, res) => {
+    const {participant_id, data} = req.body;
 
     if (!participant_id || !data) {
-        return res.status(400).json({ error: 'Requisição incompleta: participant_id e data são obrigatórios.' });
+        return res.status(400).json({error: 'Requisição incompleta: participant_id e data são obrigatórios.'});
     }
 
     const filename = `dados_participante_${participant_id}.json`;
@@ -47,7 +47,7 @@ app.post('/salvar-dados', (req, res) => {
     });*/
 
     // Salvar no bucket
-    const { error } = await supabase.storage
+    const {error} = await supabase.storage
 
         .from('dados-experimento') // nome do bucket
         .upload(filename, fileContent, {
@@ -57,11 +57,11 @@ app.post('/salvar-dados', (req, res) => {
 
     if (error) {
         console.error("Erro ao salvar no Supabase:", error);
-        return res.status(500).json({ error: 'Erro ao salvar no Supabase' });
+        return res.status(500).json({error: 'Erro ao salvar no Supabase'});
     }
 
     console.log(`Dados salvos com sucesso: ${filename}`);
-    res.json({ success: true, filename });
+    res.json({success: true, filename});
 
 });
 
