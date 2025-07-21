@@ -113,10 +113,10 @@ async function buildTimeline() {
     addSelfPacedReadingPhase();
 
     // 4. Eye tracking
-    //addEyeTrackingPhase();
+    addEyeTrackingPhase();
 
     // 5. Teste de Associação Implícita (IAT)
-    //await addIATPhase();
+    await addIATPhase();
 
     // 6. Avaliações subjetivas e identificação de autoria
     addEvaluationPhase();

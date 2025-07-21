@@ -137,9 +137,30 @@
       choices: ['Continuar'], on_finish: calculateIATDScore
     };
 
+    // Função auxiliar para instruções de bloco
+    function generateBlockInstructions(id, practice) {
+      const messages = {
+        1: "Etapa 1 de 7: Vamos começar com um treino simples. Você verá trechos de texto gerados por IA ou por humanos. Pressione 'E' para textos de IA e 'I' para textos humanos.",
+        2: "Etapa 2 de 7: Agora, o treino é com palavras positivas e negativas. Pressione 'E' para palavras negativas e 'I' para palavras positivas.",
+        3: "Etapa 3 de 7: Neste treino, combinamos categorias. Pressione 'E' para textos de IA ou palavras positivas. Pressione 'I' para textos humanos ou palavras negativas.",
+        4: "Etapa 4 de 7: Agora faremos o teste com a mesma combinação anterior. Seja rápido e preciso.",
+        5: "Etapa 5 de 7: Mudamos os lados! Agora, pressione 'E' para textos humanos e 'I' para textos de IA. Preste atenção!",
+        6: "Etapa 6 de 7: Treino com nova combinação. Pressione 'E' para textos humanos ou palavras positivas. Pressione 'I' para textos de IA ou palavras negativas.",
+        7: "Etapa 7 de 7: Último teste com a combinação anterior. Tente ser o mais rápido e preciso possível!"
+      };
+      return {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: `<p><strong>${messages[id]}</strong></p><p>Clique abaixo para começar esta etapa.</p>`,
+        choices: ['Iniciar'],
+        data: { phase: `instruction_block_${id}` }
+      };
+    }
+
     // monta timeline
     const timeline = [generalInstructions];
     blocks.forEach(({id,items,practice}) => {
+      // Adiciona instruções do bloco antes dos trials
+      timeline.push(generateBlockInstructions(id, practice));
       const trials = shuffle(items).map(({text,cat}) => ({
         type: jsPsychIatHtml,
         prompt: '',
