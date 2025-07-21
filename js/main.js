@@ -135,7 +135,9 @@ function addWelcomeAndConsent() {
         stimulus: `
             <h1>Bem-vindo ao Experimento</h1>
             <p>Obrigado por participar deste estudo sobre processamento de textos.</p>
-            <p>Este experimento tem duração aproximada de 10 minutos.</p>
+            <p>Pare realizar os teste você precisa usar o seu computador.</p>
+            <p>Desculpe, mas o celular ou tablet não irão funcionar adequadamente.</p>
+            <p>O experimento dura menos que 10 minutos.</p>
             <p>Clique em "Continuar" para prosseguir.</p>
         `,
         choices: ["Continuar"],
