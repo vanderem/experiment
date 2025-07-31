@@ -5,12 +5,60 @@
  * incluindo inicialização, calibração, validação e apresentação de textos.
  */
 
+let selectedCameraDeviceId = null;
+
+async function detectAndSelectCamera() {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const videoDevices = devices.filter(device => device.kind === "videoinput");
+
+    if (videoDevices.length <= 1) {
+        // Uma ou nenhuma câmera – usar padrão
+        selectedCameraDeviceId = null;
+        return null;
+    }
+
+    // Criar interface de escolha simples
+    const optionsHtml = videoDevices.map((device, index) => {
+        const label = device.label || `Câmera ${index + 1}`;
+        return `<option value="${device.deviceId}">${label}</option>`;
+    }).join("");
+
+    return {
+        type: jsPsychHtmlButtonResponse,
+        stimulus: `
+            <div class="instructions">
+                <h2>Escolha sua câmera</h2>
+                <p>Detectamos múltiplas câmeras conectadas. Por favor, escolha qual deseja utilizar para o rastreamento ocular:</p>
+                <select id="camera-select">${optionsHtml}</select>
+            </div>
+        `,
+        choices: ["Confirmar"],
+        on_finish: () => {
+            const selectEl = document.querySelector('#camera-select');
+            if (selectEl) {
+                selectedCameraDeviceId = selectEl.value;
+            } else {
+                console.warn("Elemento #camera-select não encontrado.");
+                selectedCameraDeviceId = null;
+            }
+        },
+        data: {
+            task: "eye_tracking_select_camera"
+        }
+    };
+}
+
 /**
  * Inicializa e configura o WebGazer para rastreamento ocular
  * @returns {Array} - Array de trials jsPsych para inicialização do WebGazer
  */
-function initializeEyeTracking() {
+async function initializeEyeTracking() {
     const trials = [];
+
+    const cameraSelectorTrial = await detectAndSelectCamera();
+    if (cameraSelectorTrial) {
+        trials.push(cameraSelectorTrial);
+    }
 
     // Instruções para inicialização do rastreamento ocular
     const cameraInstructions = {
@@ -39,6 +87,20 @@ function initializeEyeTracking() {
         `,
         data: {
             task: "eye_tracking_init_camera"
+        },
+        on_load: () => {
+            if (selectedCameraDeviceId) {
+                navigator.mediaDevices.getUserMedia({
+                    video: { deviceId: { exact: selectedCameraDeviceId } }
+                }).then(stream => {
+                    const video = document.querySelector('video');
+                    if (video) {
+                        video.srcObject = stream;
+                    }
+                }).catch(err => {
+                    alert("Erro ao acessar a câmera selecionada: " + err.message);
+                });
+            }
         }
     };
     trials.push(initCamera);
@@ -273,11 +335,11 @@ function createEyeTrackingBlock(text) {
  * @param {Array} texts - Array de textos a serem apresentados
  * @returns {Array} - Array de trials jsPsych para o eye tracking
  */
-function implementEyeTracking(texts) {
+async function implementEyeTracking(texts) {
     const allTrials = [];
 
     // Inicialização e calibração do WebGazer
-    const initTrials = initializeEyeTracking();
+    const initTrials = await initializeEyeTracking();
     allTrials.push(...initTrials);
 
     const calibrationTrials = calibrateEyeTracking();

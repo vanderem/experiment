@@ -1,6 +1,0 @@
-participant_id,text_authorship,authorship_correct,count
-etf2b33s,AI,,13
-etf2b33s,AI,False,2
-etf2b33s,human,,14
-etf2b33s,human,False,1
-etf2b33s,human,True,1

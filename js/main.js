@@ -246,12 +246,12 @@ function addSelfPacedReadingPhase() {
 /**
  * Adiciona a fase de eye tracking à timeline
  */
-function addEyeTrackingPhase() {
+async function addEyeTrackingPhase() {
     // Seleciona a outra metade dos textos para o eye tracking
     const eyeTrackingTexts = participantTexts.slice(0, 4);
 
     // Implementa o eye tracking
-    const eyeTrackingTrials = implementEyeTracking(eyeTrackingTexts);
+    const eyeTrackingTrials = await implementEyeTracking(eyeTrackingTexts);
     timeline.push(...eyeTrackingTrials);
 }
 
