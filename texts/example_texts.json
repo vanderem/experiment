@@ -1,84 +1,404 @@
 {
   "texts": [
     {
-      "id": "ai_news_1",
-      "content": "O avanço da inteligência artificial tem transformado diversos setores da economia global. Empresas de tecnologia investem bilhões em pesquisa e desenvolvimento de novos algoritmos capazes de automatizar tarefas complexas. Especialistas apontam que, nos próximos cinco anos, veremos uma revolução sem precedentes na forma como interagimos com máquinas. Entretanto, questões éticas sobre privacidade e substituição de empregos continuam sendo debatidas por governos e sociedade civil.",
-      "authorship": "AI",
-      "category": "noticias_informativas",
-      "style": "formal",
-      "word_count": 62
-    },
-    {
       "id": "human_news_1",
-      "content": "A crise climática exige ações imediatas dos líderes mundiais, alertam cientistas em novo relatório divulgado ontem. O documento, que analisou dados de temperatura dos últimos 50 anos, revela um aumento alarmante nas médias globais. Comunidades costeiras já enfrentam consequências diretas, com elevação do nível do mar e eventos climáticos extremos. Ativistas cobram compromissos mais ambiciosos na próxima conferência internacional, prevista para outubro.",
+      "content": "A existência de utensílios de pedra associadas ao gênero Homo tinha sido datada em 2,6 milhões de anos a partir de descobertas feitas na Etiópia. Lá, foram encontrados instrumentos de pedra junto a partes de fósseis de um dos mais antigos exemplares do gênero Homo, o Homo habilis, pertencente à cultura denominada olduvaiense.",
       "authorship": "human",
       "category": "noticias_informativas",
       "style": "formal",
-      "word_count": 60
+      "word_count": 53
     },
     {
-      "id": "ai_opinion_1",
-      "content": "Acredito que as redes sociais estão redefinindo nossa capacidade de conexão humana, mas não necessariamente para melhor. Passamos horas consumindo conteúdo fragmentado, criando uma ilusão de proximidade que raramente se traduz em vínculos significativos. A dopamina das curtidas substitui gradualmente a satisfação das conversas profundas. Precisamos questionar: estamos realmente mais conectados ou apenas mais distraídos com a tecnologia?",
+      "id": "human_news_2",
+      "content": "A inauguração da torre é considerada um ponto de partida importante para revitalização daquela área. Apesar disso, o WTC abre com uma ocupação de 60%, abaixo da esperada. Uma das empresas que vai ocupar o prédio é a Condé Nast, grupo dono de revistas como a Vogue, a New Yorker, a Vanity Fair, entre outras. O grupo vai ocupar 24 andares de um total de 104 e vai trazer mais de 3,4 mil pessoas, entre escritores, editores e executivos para trabalhar no prédio. A Condé Nast é um grupo muito forte de comunicação, além de ter uma imagem extremamente ligada ao glamour, por isso, a expectativa é que contribua para incentivar a vinda de outras empresas para ocupar os 40% de salas ainda disponíveis do prédio.",
+      "authorship": "human",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 126
+    },
+    {
+      "id": "human_news_3",
+      "content": "Um carro furou o bloqueio dos manifestantes e um tiro foi disparado contra a multidão, atingindo um estudante no rosto. Os ativistas acusam o motorista de atirar. Durante o protesto, o automóvel foi cercado pelos manifestantes, que batiam contra seu capô. A Polícia Militar identificou que o veículo pertence a uma Prefeitura.",
+      "authorship": "human",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 52
+    },
+    {
+      "id": "human_news_4",
+      "content": "Antes da votação, políticos croatas, pró-europeus em caráter unânime, insistiam em que a integração na União Europeia era a decisão mais importante para o país desde a sua independência, conquistada após uma guerra travada de 1991 a 1995 contra forças rebeldes sérvias, e que causou 20 mil mortos. Pra vencer, o 'sim' precisa apenas de uma maioria simples e a taxa de participação não afetou a validade da votação.",
+      "authorship": "human",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 69
+    },
+    {
+      "id": "human_news_5",
+      "content": "O início do fenômeno será visível na América do Norte (em todos os Estados Unidos, no centro e no leste do Canadá), em toda a América Central e no Caribe e no norte da América do Sul (na parte central e norte do Peru, em Equador, Colônia e na Venezuela, em quase todo o território), desde que o tempo fique aberto. O final do fenômeno não será visto nestas regiões por causa do pôr-do-sol. Toda a passagem de Vênus diante do Sol poderá ser vista no leste da Ásia e na região do Pacífico Ocidental. Na Europa, Oriente Médio e no sul da Ásia serão visíveis as etapas finais da passagem, à medida que for amanhecendo na região, na quarta-feira (6).",
+      "authorship": "human",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 121
+    },
+    {
+      "id": "ai_news_1",
+      "content": "Um grande incêndio atingiu uma fábrica de móveis na zona norte nesta madrugada, mas foi controlado em poucas horas. Os bombeiros agiram rapidamente e evitaram danos maiores ao local, que estava vazio no momento. As chamas, intensas e perigosas, consumiram parte do estoque, mas não houve feridos. A causa do acidente ainda será investigada pelas autoridades competentes.",
       "authorship": "AI",
-      "category": "textos_opinativos",
-      "style": "informal",
-      "word_count": 58
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 57
+    },
+    {
+      "id": "ai_news_2",
+      "content": "O governo federal anunciou ontem a chegada de uma nova tecnologia solar que promete revolucionar completamente o setor energético nacional. A inovação utiliza painéis solares mais eficientes que captam energia mesmo durante dias nublados ou chuvosos na região. Empresas locais já demonstraram interesse em adotar rapidamente essa solução sustentável para reduzir custos operacionais significativamente. Especialistas afirmam que essa tecnologia pode gerar empregos diretos em várias cidades brasileiras nos próximos meses. O investimento inicial será de aproximadamente dois bilhões de reais para implementar completamente o projeto nacional. Autoridades esperam que os primeiros resultados práticos apareçam ainda no primeiro semestre do ano que vem.",
+      "authorship": "AI",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 102
+    },
+    {
+      "id": "ai_news_3",
+      "content": "Cientistas brasileiros anunciaram ontem descoberta importante envolvendo micro-organismos marinhos. Pesquisadores identificaram propriedades terapêuticas capazes de combater doenças graves. Estudos indicaram eficácia significativa contra infecções resistentes conhecidas mundialmente. O governo apoiou iniciativas destinadas a ampliar pesquisas biomédicas futuras. Comunidades científicas internacionais celebraram avanços, destacando impacto transformador para medicina moderna.",
+      "authorship": "AI",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 48
+    },
+    {
+      "id": "ai_news_4",
+      "content": "A forte chuva atingiu a cidade, causando grandes vazamentos e deixando muitas ruas alagadas, atingindo rapidamente o centro e vazando água nas casas. O forte vento rápido e intenso atingiu telhados e árvores velhas. Ela causou muitos danos sérios e grandes prejuízos totalmente imediatos aos moradores dos bairros atingidos.",
+      "authorship": "AI",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 49
+    },
+    {
+      "id": "ai_news_5",
+      "content": "Um estudo inovador sobre a ecologia dos recifes de coral na costa brasileira revelou descobertas surpreendentes. Pesquisadores da Universidade de São Paulo (USP), em colaboração com o Instituto de Oceanografia, analisaram cuidadosamente os complexos ecossistemas marinhos. A equipe científica constatou uma notável resiliência das colônias de corais, apesar das crescentes ameaças climáticas e da poluição local. Este projeto, financiado inteiramente por uma agência internacional de pesquisa, traz importantes esperanças para o futuro de diversas espécies. A divulgação completa do relatório científico está programada para a próxima semana.",
+      "authorship": "AI",
+      "category": "noticias_informativas",
+      "style": "formal",
+      "word_count": 87
     },
     {
       "id": "human_opinion_1",
-      "content": "Não aguento mais essa história de que jovens não sabem o que querem. Cresci ouvindo que minha geração era preguiçosa e mimada, mas somos nós que enfrentamos um mercado de trabalho precarizado, moradia inacessível e uma crise climática que herdamos. Se estamos questionando o modelo tradicional de carreira e consumo, não é por falta de direção, mas por termos clareza sobre o que não queremos repetir. Está na hora de ouvir mais e julgar menos.",
+      "content": "Enfrentamos gargalos relevantes nas redes de transmissão e distribuição de energia, principalmente em horários de pico. O curtailment (redução forçada da geração) virou assunto prioritário entre os reguladores do setor. A eletrificação em larga escala da frota de ônibus impactará ainda mais o sistema elétrico, que já é pressionado e enfrenta desafios enormes. O biometano transforma o que seria descartado em fonte de energia renovável. Sua produção pode ser próxima ao local de consumo, contribuindo para reduzir custos logísticos, além de estimular o desenvolvimento regional, gerar empregos locais e fortalecer uma cadeia energética circular.",
       "authorship": "human",
       "category": "textos_opinativos",
       "style": "informal",
-      "word_count": 70
+      "word_count": 94
     },
     {
-      "id": "ai_description_1",
-      "content": "O relógio antigo repousa sobre a lareira de mármore, seus ponteiros de bronze movendo-se em ritmo constante. A madeira escura da caixa contrasta com os detalhes dourados ao redor do mostrador, onde números romanos marcam as horas com elegância clássica. Pequenas rachaduras no vidro contam histórias de décadas passadas, enquanto o pêndulo balança em movimento hipnótico, preenchendo a sala com seu tique-taque suave e reconfortante.",
+      "id": "human_opinion_2",
+      "content": "De acordo com o mesmo levantamento, 72% dos entrevistados relataram ter encontrado notícias falsas nas redes sociais nos últimos seis meses que antecederam as eleições de 2024. Essa realidade levanta preocupações sobre a integridade do processo eleitoral, uma vez que a disseminação de informações enganosas pode distorcer a percepção pública e manipular a opinião dos eleitores. A produção de fake news é prática desonesta, que adultera informações e busca mudar a verdade. Tem crescido com o mal uso da inteligência artificial, porque a burrice natural segue sendo uma triste realidade.",
+      "authorship": "human",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 90
+    },
+    {
+      "id": "human_opinion_3",
+      "content": "Mello Araújo incomoda dentro e fora da prefeitura. Ele não tem o cargo de coordenador das secretarias, ou de ouvidor municipal. Ele é vice-prefeito para substituir o titular em algum impedimento. Mas apesar de militar, o coronel não é tão disciplinado assim, para os padrões da política. E não se surpreendam se, na hipótese de Tarcísio de Freitas ser mesmo candidato a presidente, Ricardo Nunes ter o nome barrado por diversos partidos que o apoiaram na reeleição. E o motivo seria o outro Ricardo, o Mello Araújo. Vocês podem imaginá-lo sentado na cadeira de prefeito?",
+      "authorship": "human",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 95
+    },
+    {
+      "id": "human_opinion_4",
+      "content": "Em outra pesquisa recente do Datafolha, 39% dos entrevistados se declararam mais identificados com o petismo, e 37%, com o bolsonarismo, num empate técnico que abarca três quartos do eleitorado nacional - o quarto restante reúne os neutros (18%), os avessos aos dois polos (5%) e os que não souberam responder (1%). A fidelidade se mantém elevada nos dois grandes blocos, espelhando a disputa presidencial de 2022, vencida por Lula com vantagem mínima sobre Bolsonaro. Tal situação convém aos expoentes de ambos os lados, que se mantém protagonistas na política mesmo sem conquistar maiorias sólidas na sociedade. É prejudicial à racionalidade do debate, à civilidade do diálogo e à formação de consensos essencial para o avanço da agenda do país.",
+      "authorship": "human",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 119
+    },
+    {
+      "id": "human_opinion_5",
+      "content": "Tenho fama entre os amigos de hiperfocar em assuntos aleatórios, mergulhando por meses em leituras inesperadas. Mas a verdade é que, de uma forma ou de outra, sempre encontro conexões entre esses temas e o meu trabalho — que, no fundo, consiste em influenciar, por meio da comunicação, diferentes tomadores de decisão para que a canalizem investimentos em soluções sustentáveis. Na entrevista a Attia, Duhigg descreve o chamado loop do hábito: um ciclo formado por uma deixa, seguida da ação e, então, de uma recompensa. Ele citou um exemplo marcante: durante uma campanha de saúde pública, foi quase impossível convencer a população de um país a adotar o hábito de lavar as mãos apenas pelo benefício de evitar doenças. A mudança só aconteceu quando o argumento foi reformulado: “Lavar as mãos — e ensinar seus filhos a fazer o mesmo — fará de você um pai ou uma mãe melhor.” O hábito se consolidou quando o benefício abstrato deu lugar a uma recompensa moral, mais imediata e poderosa.",
+      "authorship": "human",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 165
+    },
+    {
+      "id": "ai_opinion_1",
+      "content": "A crescente dependência digital, inevitável e preocupante, redefine radicalmente as interações humanas autênticas. As relações sociais superficiais substituem gradualmente os laços profundos e genuínos. A comunicação virtual, fria e impessoal, promove um isolamento coletivo perigoso. A sociedade precisa urgentemente de uma reflexão séria sobre esse caminho tecnológico. Devemos valorizar mais o contato físico e as conversas reais. O futuro exige um equilíbrio imediato e sensato entre o mundo online e a vida real.",
       "authorship": "AI",
-      "category": "descricoes",
-      "style": "formal",
-      "word_count": 63
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 73
+    },
+    {
+      "id": "ai_opinion_2",
+      "content": "A tecnologia digital representa uma ferramenta fundamental para transformar métodos educacionais tradicionais em práticas modernas eficazes. Professores capacitados devem integrar recursos tecnológicos avançados nas atividades pedagógicas diárias para estimular interesse genuíno dos estudantes. Plataformas interativas oferecem oportunidades únicas de aprendizagem personalizada, permitindo desenvolvimento individual adequado às necessidades específicas de cada aluno. Instituições educacionais precisam investir em infraestrutura tecnológica robusta e programas de capacitação docente continuada para garantir implementação bem-sucedida. Essa transformação digital educacional promove competências essenciais que preparam jovens para desafios profissionais futuros no mercado globalizado contemporâneo.",
+      "authorship": "AI",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 87
+    },
+    {
+      "id": "ai_opinion_3",
+      "content": "Acredito que a educação pública necessita urgentemente de maior investimento governamental. Embora muitos defendam reformas rápidas, considero fundamental planejar políticas sustentáveis. Infelizmente, escolas continuam carentes, professores permanecem desmotivados e estudantes enfrentam barreiras sociais. Frequentemente, observamos discursos vazios, enquanto a realidade insiste em permanecer desafiadora. Realmente, a qualidade educacional reflete diretamente na cidadania e também no futuro. Portanto, é imprescindível agir seriamente, pois a negligência resulta em desigualdade. Eu defendo, ainda, que todos participem ativamente desse debate democrático. Finalmente, devemos lembrar sempre: sem educação digna, não existirá progresso.",
+      "authorship": "AI",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 87
+    },
+    {
+      "id": "ai_opinion_4",
+      "content": "A tecnologia moderna, essa força transformadora, traz benefícios incríveis ao nosso cotidiano, conectando-nos instantaneamente e facilitando tarefas complexas com eficiência surpreendente. Porém, seu uso excessivo e descontrolado gera sérios riscos à saúde mental, promovendo isolamento social e ansiedade constante em muitos indivíduos, especialmente os mais jovens. Essa dependência digital, essa busca incessante por notícias e notificações, enfraquece nossa capacidade de concentração profunda e de interações genuínas. Portanto, devemos buscar um equilíbrio saudável, utilizando essas ferramentas poderosas com sabedoria e moderação, para que realmente nos sirvam e não nos escravizem. Somos nós, os usuários, que devemos definir os limites adequados e garantir que a inovação tecnológica permaneça uma aliada, não um tirano.",
+      "authorship": "AI",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 111
+    },
+    {
+      "id": "ai_opinion_5",
+      "content": "Em nossa sociedade moderna, a presença crescente da tecnologia representa um desafio e uma oportunidade. Este avanço tecnológico, embora inevitável, exige uma reflexão crítica sobre suas consequências. O uso indiscriminado de dispositivos digitais, muitas vezes sem controle, pode gerar um isolamento social profundo, diminuindo a qualidade das nossas interações pessoais. No entanto, a tecnologia também oferece ferramentas poderosas para a educação e a colaboração, permitindo o acesso a um conhecimento vasto e a uma comunicação global. É nosso dever, portanto, buscar um equilíbrio consciente, integrando a tecnologia de forma a valorizar a humanidade. A evolução tecnológica deve sempre servir ao progresso humano, jamais o contrário, e nós precisamos encontrar a maneira correta de aplicá-la em nosso cotidiano.",
+      "authorship": "AI",
+      "category": "textos_opinativos",
+      "style": "informal",
+      "word_count": 117
     },
     {
       "id": "human_description_1",
-      "content": "A praça do bairro desperta lentamente com o sol da manhã. Bancos de madeira desgastada acolhem os primeiros visitantes – senhores com jornais dobrados e mães com carrinhos de bebê. No centro, a fonte jorra água cristalina que brilha contra o céu azul, enquanto pombos disputam migalhas deixadas por crianças apressadas a caminho da escola. As árvores antigas formam uma cobertura verde, suas sombras dançando no chão de pedras irregulares.",
+      "content": "Um sistema ERP consiste em soluções de módulo integradas ou aplicativos empresariais que compartilham um banco de dados comum que os conecta e permite que eles falem entre si. Em geral, cada módulo ERP tem foco em uma área de negócios, mas estão interligados e usam os mesmos dados para atender às necessidades da empresa. As empresas escolhem a solução de módulo que desejam – como financiamento, logística, procurement e RH – e podem adicionar e expandir – conforme necessário. Os sistemas ERP também suportam requisitos específicos do setor, seja como parte da funcionalidade principal do sistema ou por meio de extensões de aplicativo que se integram à suíte de módulos.",
       "authorship": "human",
       "category": "descricoes",
       "style": "formal",
-      "word_count": 65
+      "word_count": 108
     },
     {
-      "id": "ai_instructions_1",
-      "content": "Para preparar um café coado perfeito, comece com grãos recém-moídos em granulação média. Aqueça água filtrada até 92°C – não deixe ferver completamente. Coloque o filtro de papel no suporte e enxágue com água quente para eliminar o gosto de papel. Adicione 15g de café para cada 250ml de água. Despeje água suficiente para umedecer o pó e aguarde 30 segundos para a extração inicial. Complete com o restante da água em movimentos circulares. Sirva imediatamente.",
-      "authorship": "AI",
-      "category": "instrucoes",
-      "style": "formal",
-      "word_count": 71
-    },
-    {
-      "id": "human_instructions_1",
-      "content": "Pra fazer brigadeiro do jeito certo, pega uma panela boa e mistura uma lata de leite condensado, 3 colheres de chocolate em pó e uma colher de manteiga. Leva pro fogo baixo e vai mexendo sem parar, viu? O segredo é não deixar grudar no fundo. Quando começar a desgrudar da panela e você conseguir ver o fundo quando passar a colher, tá pronto! Deixa esfriar um pouco, passa manteiga nas mãos e enrola. Depois é só passar no granulado.",
+      "id": "human_description_2",
+      "content": "é um jogo eletrônico de quebra-cabeça criado por Alexey Pajitnov, lançado em 1985. Pajitnoy era engenheiro de informática no Centro de Computadores da Academia Russa das Ciências. Foi publicado por várias empresas para diversas plataformas, mais proeminentemente durante uma disputa sobre a apropriação dos direitos no final da década de 1980. Após um período significativo de publicação pela Nintendo, em 1996 os direitos foram revertidos para Pajitnov, que co-fundou a Tetris Company com Henk Rogers para gerenciar o licenciamento da série.",
       "authorship": "human",
-      "category": "instrucoes",
-      "style": "informal",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 81
+    },
+    {
+      "id": "human_description_3",
+      "content": "Filósofos passaram muitos séculos buscando o significado da vida, mas nas últimas décadas os biólogos celulares ficaram ainda mais fascinados pelo significado da morte. A apoptose descreve o colapso orquestrado de uma célula, caracterizado pela formação de bolhas na membrana, encolhimento celular, condensação da cromatina e fragmentação do DNA, seguido pelo rápido engolfamento do cadáver por células vizinhas. Distingue-se da morte por necrose pela ausência de uma resposta inflamatória associada.",
+      "authorship": "human",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 70
+    },
+    {
+      "id": "human_description_4",
+      "content": "é a quebra do núcleo de um átomo instável em dois núcleos menores pelo bombardeamento de partículas como nêutrons. Os isótopos formados pela divisão têm massa parecida, no entanto geralmente seguem a proporção de massa de 3 para 2. O processo de fissão é uma reação exotérmica onde há liberação de energia e ocorre em usinas nucleares e em bombas atômicas. A fissão é considerada uma forma de transmutação nuclear pois os fragmentos gerados não são do mesmo elemento do que o isótopo gerador.",
+      "authorship": "human",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 84
+    },
+    {
+      "id": "human_description_5",
+      "content": "A deriva genética é um mecanismo de evolução caracterizado por flutuações aleatórias na frequência de uma versão específica de um gene (alelo) em uma população. Embora afete principalmente populações pequenas e isoladas, os efeitos da deriva genética podem ser fortes, às vezes fazendo com que características se tornem extremamente frequentes ou desapareçam de uma população.",
+      "authorship": "human",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 55
+    },
+    {
+      "id": "ai_description_1",
+      "content": "O viajante solitário atravessa lentamente a velha ponte de pedra sob a luz prateada da lua cheia. Ele observa atentamente as profundas e escuras águas do rio, que carregam histórias silenciosas de tempos antigos. Seus passos cautelosos ecoam no ar noturno, enquanto sua mente inquieta busca respostas para os complexos enigmas da sua própria existência. Esta jornada introspectiva revela belas, porém dolorosas, verdades sobre a efêmera natureza da vida humana. Cada decisão tomada define irrevocavelmente o seu caminho futuro.",
+      "authorship": "AI",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 79
+    },
+    {
+      "id": "ai_description_2",
+      "content": "A organização eficiente de documentos digitais requer planejamento estratégico e método consistente. Você deve criar pastas temáticas específicas para categorizar arquivos por projetos, datas ou departamentos organizacionais. Estabeleça convenções claras de nomenclatura usando códigos padronizados, números sequenciais e descrições objetivas para facilitar buscas futuras. Implemente backups automáticos regulares em nuvem ou dispositivos externos para proteger informações importantes contra perdas acidentais. Revise periodicamente sua estrutura organizacional, eliminando arquivos desnecessários e atualizando categorias conforme necessidades emergentes do trabalho.",
+      "authorship": "AI",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 76
+    },
+    {
+      "id": "ai_description_3",
+      "content": "Para iniciar o percurso, observe atentamente a entrada principal, caracterizada por colunas robustas, detalhes ornamentais e iluminação adequada, que garantem segurança contínua. Caminhe devagar pelo corredor central, apreciando o piso polido, as paredes decoradas e o ambiente silencioso, marcado pela harmonia visual. Ao alcançar o salão amplo, identifique os setores disponíveis, distribuídos de modo funcional, prático e claramente sinalizado. Finalize o trajeto dirigindo-se à área de apoio, onde serviços específicos oferecem orientação, conforto e praticidade.",
+      "authorship": "AI",
+      "category": "descricoes",
+      "style": "formal",
       "word_count": 75
     },
     {
-      "id": "ai_story_1",
-      "content": "Ana fechou os olhos enquanto o trem avançava pelos campos. Vinte anos desde que partira, e agora retornava à cidade natal. Na mala, além de roupas, carregava memórias e o peso das escolhas feitas. O bilhete amassado indicava a estação final – um nome que tentara esquecer. Quando o condutor anunciou a próxima parada, seu coração acelerou. Pela janela, reconheceu o velho carvalho da infância. Algumas raízes, pensou, são impossíveis de cortar.",
+      "id": "ai_description_4",
+      "content": "Organize rapidamente seu espaço claro usando caixas eficientes. Separe itens semelhantes em grupos distintos mantendo tudo visível. Use etiquetas simples para identificação rápida sempre que possível. Evite acumular objetos desnecessários em locais escuros. Mantenha sua área de trabalho limpa e funcional para maior produtividade diária.",
       "authorship": "AI",
-      "category": "contos",
+      "category": "descricoes",
       "style": "formal",
-      "word_count": 67
+      "word_count": 45
     },
     {
-      "id": "human_story_1",
-      "content": "Guardei o último origami que meu avô me ensinou a fazer. Um tsuru azul, ligeiramente amassado nas pontas. Ele dizia que cada dobra era uma decisão, cada vinco uma consequência. \"A vida é assim\", falava com seu sotaque carregado, \"não dá pra desfazer sem deixar marcas\". Naquela tarde, suas mãos tremiam mais que o normal. O pássaro de papel ficou torto, imperfeito. Hoje entendo que aquele foi seu último presente – a beleza do que não precisa ser perfeito para voar.",
+      "id": "ai_description_5",
+      "content": "As ondas prateadas quebram suavemente na beira, um espetáculo sereno e constante. O sol dourado lança seus raios quentes sobre a água cristalina, criando reflexos brilhantes. Neste paraíso isolado, a natureza exuberante reina suprema, proporcionando uma experiência de tranquilidade profunda para quem a visita.",
+      "authorship": "AI",
+      "category": "descricoes",
+      "style": "formal",
+      "word_count": 44
+    },
+    {
+      "id": "human_instructions_1",
+      "content": "Outro item importantíssimo nas cozinhas planejadas é o paneleiro. Ele também não é complicado de montar. Confira.\n\nPasso 1: Comece colocando os pregos, buchas e pinos de madeira em todas as peças.\nPasso 2: Comece a montar, adicionando o topo e a parte inferior à parte maior do seu paneleiro. Parafuse.\nPasso 3: Inclua as principais prateleiras internas (as maiores). Parafuse.\nPasso 4: Só então, faça o fechamento lateral.\nPasso 5: Instale os pés. Atenção nas medidas, ok?\nPasso 6: Instale o fundo do paneleiro. Use um pequeno martelo para os pregos.\nPasso 7: Coloque o paneleiro em pé. Monte o fechamento para os pés. Antes de fixar as presilhas, faça a marcação de acordo com as medidas indicadas no manual. Instale o fechamento.\nPasso 8: Inclua as prateleiras internas menores.\nPasso 9: Instale as dobradiças nas portas. Atenção para elas ficarem retas, seguindo a porta. O local das dobradiças já virá marcado na peça.\nPasso 10: Peça ajuda para outra pessoa na hora de instalar as portas. Um deve segurar a porta e outro parafusar a dobradiça.\nPasso 11: Depois das portas instaladas, coloque o puxador com a porta aberta.",
       "authorship": "human",
-      "category": "contos",
+      "category": "instrucoes",
       "style": "informal",
-      "word_count": 76
+      "word_count": 191
+    },
+    {
+      "id": "human_instructions_2",
+      "content": "Coloque o feijão numa peneira e lave bem sob água corrente. Transfira os grãos para uma tigela grande e cubra com 2,5 litros de água – se algum boiar, descarte. Cubra com um prato e deixe de molho por 30 minutos – se o feijão ficar muito tempo de molho pode perder a cor e desmanchar durante o longo cozimento da feijoada. Enquanto isso, faça o pré-cozimento das carnes.\nEscorra a água das carnes dessalgadas e transfira para um caldeirão grande (ou panela) com capacidade para 11 litros. Cubra as carnes com água e leve ao fogo alto – cerca de 4 litros bastam, a quantidade pode variar de acordo com o tamanho da panela, o importante é que as carnes devem ficar completamente imersas. Deixe cozinhar por 10 minutos em fogo alto, contados após a fervura – o pré-cozimento elimina o excesso de gordura e sal das carnes.\nEnquanto isso, descasque e pique fino as cebolas e os dentes de alho. Com uma faca pequena, retire a pele dos paios. Escorra a água do feijão.",
+      "authorship": "human",
+      "category": "instrucoes",
+      "style": "informal",
+      "word_count": 172
+    },
+    {
+      "id": "human_instructions_3",
+      "content": "1. Misturar areia e cimento\nPrimeiramente, coloque a areia e, em seguida, o cimento; misture com a ajuda de uma enxada ou pá até ficar uma massa uniforme. Se a argamassa necessitar do uso de cal, siga esse mesmo procedimento e jogue a cal quando a mistura estiver pronta.\n2. Adicionar água\nQuando a mistura estiver bem homogênea, faça um buraco no meio da argamassa e adicione água aos poucos até chegar ao ponto ideal: nem mole, nem duro demais. Atenção para que a água não escorra para fora.\n3. Misturar bem\nMexa bem até chegar ao ponto ideal, lembrando que os tipos de argamassa que levam somente cimento costumam secar mais rapidamente. O ideal é preparar somente a quantidade que será usada.",
+      "authorship": "human",
+      "category": "instrucoes",
+      "style": "informal",
+      "word_count": 123
+    },
+    {
+      "id": "human_instructions_4",
+      "content": "Modo de fazer\n- Utilizando a argila, modele o vulcão sobre a placa de isopor. No topo do vulcão coloque a embalagem do filme fotográfico com a boca para cima, essa representará a cratera.\n- após a secagem da argila faça a decoração do vulcão e das áreas periféricas. Pinte-o de maneira que caracterize o que está sendo representado.\n- finalizada a parte estrutural do vulcão, é hora de colocá-lo em funcionamento. Para isso, coloque dentro da cratera duas colheres de bicarbonato de sódio, uma colher de detergente, três gotas de corante vermelho e três, de amarelo. E, por fim, acrescente uma colher de vinagre.\n- com a união desses elementos você verá o resultado. Esse processo produz uma fiel representação de um vulcão em atividade, vale apena conferir.",
+      "authorship": "human",
+      "category": "instrucoes",
+      "style": "informal",
+      "word_count": 125
+    },
+    {
+      "id": "human_instructions_5",
+      "content": "1 - Pique bem os papéis usados que serão reciclados e coloque-os na bacia rasa;\n2 - Cubra o papel com água;\n3 - Deixe de molho por um dia pelo menos;\n4 - Coloque a mistura de papel e água no liquidificador, adicione mais água (na proporção de três partes de água para uma de papel, contando com a água da mistura) e bata;\n5 - Para cada litro de água adicione 8 colheres de amido de milho e 20 gotas de desinfetante;\n6 - Coloque essa mistura na bacia funda com água até a metade;\n7 - Misture bem;\n8 - Coloque a peneira pela lateral da bacia e vá até o fundo com ela. Depois suba lentamente, sem incliná-la, formando uma camada de papel sobre a peneira;\n9 - Coloque a peneira sobre um jornal em alguma superfície e passe a mão sob a peneira inclinada para escorrer a água. Vá trocando de jornal até que não fique mais molhado;\n10 - Com o jornal embaixo da peneira, cubra-a com um pano e aperte para secar a superfície. Vá trocando de pano até que não esteja mais molhado;\n11 - Agora, vire a peneira sobre o jornal seco e bata para que a folha formada solte-se;\n12 - Cubra com outro jornal e deixe por um dia;\n13 - Prense a folha produzida com a ajuda de livros pesados e grandes.",
+      "authorship": "human",
+      "category": "instrucoes",
+      "style": "informal",
+      "word_count": 221
+    },
+    {
+      "id": "ai_instructions_1",
+      "content": "Preparação do terreno para plantio. Escolha um local com boa incidência solar. Revolva a terra com cuidado, removendo pedras e ervas daninhas. Adicione adubo orgânico de alta qualidade. A terra deve ficar fofa e bem nutrida. A irrigação inicial é fundamental. A terra úmida facilita a semeadura. Distribua as sementes de forma uniforme. Siga as instruções da embalagem para a profundidade correta. Cubra as sementes com uma camada fina de terra. A primeira rega deve ser suave, um fino borrifo. Evite uma forte corrente de água. A terra deve permanecer sempre húmida, mas nunca encharcada.\nA germinação exige paciência. Acompanhe o crescimento das pequenas plantas. A remoção de ervas invasoras é uma tarefa constante. Elas competem por nutrientes preciosos. Observe atentamente as folhas. Sinais de pragas ou doenças exigem ação imediata. Use apenas produtos naturais e seguros. A colheita é o momento mais gratificante. Colha os frutos no ponto exato de maturação. O trabalho diligente garante alimentos saborosos e saudáveis. A horta caseira oferece grande satisfação pessoal.",
+      "authorship": "AI",
+      "category": "instrucoes",
+      "style": "formal",
+      "word_count": 167
+    },
+    {
+      "id": "ai_instructions_2",
+      "content": "Pegue as peças principais do kit e organize cada item sobre a mesa limpa. Retire todos os parafusos pequenos da caixa azul e separe conforme o tipo. Conecte o cabo vermelho na entrada direita do painel central grande. Encaixe a placa verde no slot superior esquerdo com cuidado total. Aperte os quatro parafusos dourados usando a chave especial fornecida no manual. Verifique se todas as conexões elétricas estão firmes antes de prosseguir. Ligue o interruptor geral localizado na parte traseira do equipamento novo. Aguarde o sinal sonoro curto que indica funcionamento correto do sistema. Configure os parâmetros básicos através do menu digital avançado da tela. Teste cada função principal seguindo a sequência numérica descrita anteriormente. Registre os dados obtidos no formulário oficial anexo ao documento técnico. Finalize guardando todas as ferramentas utilizadas na caixa original fornecida.",
+      "authorship": "AI",
+      "category": "instrucoes",
+      "style": "formal",
+      "word_count": 167
+    },
+    {
+      "id": "ai_instructions_3",
+      "content": "Leia atentamente cada passo antes de iniciar qualquer procedimento solicitado. Primeiro, verifique cuidadosamente se todos os materiais necessários estão disponíveis. Em seguida, organize-os adequadamente sobre a mesa escolhida para o trabalho. Depois, ligue o equipamento principal e aguarde pacientemente seu funcionamento correto. Sempre mantenha a postura adequada para evitar desconfortos corporais. Agora, siga calmamente as etapas exibidas na tela informativa. Ajuste regularmente as configurações indicadas pelo manual fornecido. Posteriormente, confirme manualmente se todas as funções estão operando corretamente. Nunca utilize o aparelho em locais inadequados ou perigosos. Ao concluir, desligue o sistema e armazene-o corretamente. Por fim, revise atentamente se cada instrução foi realmente cumprida integralmente.",
+      "authorship": "AI",
+      "category": "instrucoes",
+      "style": "formal",
+      "word_count": 106
+    },
+    {
+      "id": "ai_instructions_4",
+      "content": "Primeiro, você deve separar todas as peças e ferramentas listadas no manual. Em seguida, monte a estrutura principal usando os parafusos fornecidos e chaves de fenda adequadas. Verifique se todas as superfícies estão limpas e livres de poeira antes de prosseguir. Depois, posicione as prateleiras nos locais indicados, garantindo perfeito alinhamento com os encaixes existentes. Finalmente, teste a estabilidade completa do produto pressionando levemente cada componente. Certifique-se de que todos os elementos estão firmes e seguros antes de usar o móvel.",
+      "authorship": "AI",
+      "category": "instrucoes",
+      "style": "formal",
+      "word_count": 81
+    },
+    {
+      "id": "ai_instructions_5",
+      "content": "Para iniciar a reestruturação de qualquer projeto organizacional, você deve primeiro coletar todos os dados e informações relevantes, incluindo relatórios financeiros e de desempenho, para fazer uma análise completa e detalhada das atuais estruturas e processos. Você precisa identificar, com total clareza, os pontos fortes e fracos, buscando as áreas que possuem um potencial de melhoria significativo, o que permitirá elaborar um plano estratégico sólido, que precisa de um foco principal em otimizar a eficiência operacional e, também, em elevar a produtividade geral das equipes envolvidas. Para tal, é fundamental que você implemente novas tecnologias e sistemas de trabalho, pois eles oferecerão ferramentas e métodos mais avançados, que podem dinamizar as tarefas diárias e simplificar as operações complexas, um passo que irá transformar a sua maneira de trabalhar. Além disso, você deve acompanhar a implementação das mudanças de perto, monitorando os resultados com atenção e fazendo ajustes conforme necessário, o que garantirá que o projeto continue evoluindo e crescendo de forma sustentável, atingindo os objetivos propostos. A comunicação eficaz é uma ferramenta chave, pois você precisa manter todas as equipes informadas e engajadas durante todo o processo.",
+      "authorship": "AI",
+      "category": "instrucoes",
+      "style": "formal",
+      "word_count": 81
+    },
+    {
+      "id": "human_poem_1",
+      "content": "Filho podre de antigos Goitacases,\nEm qualquer parte onde a cabeça ponha,\nDeixa circunferências de peçonha,\nMarcas oriundas de úlceras e antrazes.\nTodos os cinocéfalos vorazes\nCheiram seu corpo. À noite, quando sonha,\nSente no tórax a pressão medonha\nDo bruto embate férreo das tenazes.\nMostra aos montes e aos rígidos rochedos\nA hedionda elefantíase dos dedos\nHá um cansaço no Cosmos... Anoitece.\nRiem as meretrizes no Cassino,\nE o Lázaro caminha em seu destino\nPara um fim que ele mesmo desconhece!",
+      "authorship": "human",
+      "category": "poesia_contos",
+      "style": "informal",
+      "word_count": 82
+    },
+    {
+      "id": "human_poem_2",
+      "content": "É tarde! É muito tarde! O templo é negro...\nO fogo-santo já no altar não arde.\nVestal! não venhas tropeçar nas piras...\nÉ tarde! É muito tarde!\nTreda noite! E minh’alma era o sacrário,\nA lâmpada do amor velava entanto,\nVirgem flor enfeitava a borda virgem\nDo vaso sacrossanto;\nQuando Ela veio — a negra feiticeira —\nA libertina, lúgubre bacante,\nLascivo olhar, a trança desgrenhada,\nA roupa gotejante.\nFoi minha crença — o vinho dessa orgia,\nFoi minha vida — a chama que apagou-se,\nFoi minha mocidade — o toro lúbrico,\nMinh’alma — o tredo alcouce.\nE tu, visão do céu! Vens tateando\nO abismo onde uma luz sequer não arde?\nAi! não vás resvalar no chão lodoso...\nÉ tarde! É muito tarde!",
+      "authorship": "human",
+      "category": "poesia_contos",
+      "style": "informal",
+      "word_count": 118
+    },
+    {
+      "id": "human_poem_3",
+      "content": "De tanta inspiração e tanta vida\nQue os nervos convulsivos inflamava\nE ardia sem conforto.. .\nO que resta? uma sombra esvaecida,\nUm triste que sem mãe agonizava...\nResta um poeta morto!\nMorrer! e resvalar na sepultura,\nFrias na fronte as ilusões — no peito\nQuebrado o coração!\nNem saudades levar da vida impura\nOnde arquejou de fome... sem um leito!\nEm treva e solidão!\nTu foste como o sol; tu parecias\nTer na aurora da vida a eternidade\nNa larga fronte escrita. . .\nPorém não voltarás como surgias!\nApagou-se teu sol da mocidade\nN’uma treva maldita!",
+      "authorship": "human",
+      "category": "poesia_contos",
+      "style": "informal",
+      "word_count": 94
+    },
+    {
+      "id": "human_poem_4",
+      "content": "Bem! A palavra dentro em vós escrita\nEm colossais e rubros caracteres,\nÉ valorosa, pródiga, infinita,\nTem proporções de claros rosicleres.\nComo uma chuva olímpica de estrelas\nTodas as vidas livres, fulgurosas,\nResplandecendo, — vós tereis de vê-las\nRolar, rolar nas vastidões gloriosas.\nBasta do escravo, ao suplicante rogo,\nSubindo acima das etéreas gazas,\nDo sol da idéia no escaldante fogo,\nQueimar, queimar as rutilantes asas.\nQueimar nas chamas luminosas, francas\nEmbora o grito da matéria apague-as;\nPorque afinal as consciências brancas\nSão imponentes como as grandes águias.\nBasta na forja, no arsenal da idéia,\nFundir a idéia que mais bela achardes,\nComo uma enorme e fúlgida Odisséia\nDa humanidade aos imortais alardes.",
+      "authorship": "human",
+      "category": "poesia_contos",
+      "style": "informal",
+      "word_count": 112
+    },
+    {
+      "id": "human_poem_5",
+      "content": "O grave professor, aprumando sobre o nariz os óculos de ouro, começa a sua lição. Grave, grave,\no professor Mac-Leley! calvo, vermelho, possuindo nas bochechas flácidas algumas falripas raras e\ngrisalhas, o velho inglês é a circunspecção em pessoa. Sempre trajado severamente — calças negras,\ncolete negro, rodaque de alpaca negra, gravata negra de três voltas... Grave, grave, o professor MacLeley!\nLevanta-se, tosse duas vezes, passeia pela sala um olhar minucioso, e principia. Os meninos, em\nsemicírculo, agitam-se, mexem-se, dispõe-se a ouvir a palavra do mestre, que vai fazer a lição de\ncousas. Justamente um dos alunos faltou: morrera-lhe um tio. E o circunspecto Mac-Leley aproveita a\nocasião para ensinar à classe o que é um defunto, o que é a morte, o que é a vida, o que é um cadáver...\n— Quando cessa o funcionamento de um orgão, meninos, diz-se que este orgão está morto. O\ncorpo humano é um conjunto de órgãos... O funcionamento de todos esses órgãos é a vida. Se os órgãos\nnão funcionam mais, o homem morre, é um defunto, é um cadáver...",
+      "authorship": "human",
+      "category": "poesia_contos",
+      "style": "informal",
+      "word_count": 177
+    },
+    {
+      "id": "ai_poem_1",
+      "content": "O velho relógio de pêndulo marcava a hora inexorável na parede solitária. Seu tique-taque ecoava no silêncio poeirento da sala vazia, um som monótono e constante. Cada segundo caía no esquecimento, um lamento mudo pela passagem do tempo. A luz fraca do entardecer dançava entre as sombras alongadas, revelando traços de uma vida anterior. Móveis antigos guardavam memórias silenciosas em sua madeira escura e cansada. O ar parado cheirava a lembranças e a abandono. Era um lugar fora do mundo, um retrato imóvel de ausência, onde apenas o ponteiro insistia em seu caminho circular, eterno.",
+      "authorship": "AI",
+      "category": "poesia_contos",
+      "style": "formal",
+      "word_count": 95
+    },
+    {
+      "id": "ai_poem_2",
+      "content": "Sol surge devagar hoje. Ruas ainda dormem quietas sempre. Carros passam bem longe agora. Gente caminha pelas calçadas velhas. Café quente espera nas mesas pequenas. Pássaros cantam alto entre galhos secos. Vento sopra folhas pelo chão molhado. Janelas abrem para luz nova. Crianças correm até portões brancos. Flores nascem nos jardins antigos. Tempo passa muito rápido aqui. Sons chegam de todos lugares distantes. Nuvens flutuam sobre telhados vermelhos. Vida acontece em cada esquina próxima. Portas fecham quando pessoas saem cedo. Elas buscam trabalho nas ruas largas. Movimento cresce nos bairros centrais. Ar fica denso com fumaça cinza. Lojas abrem suas vitrines coloridas. Música toca nos rádios dos carros. Mundo gira enquanto todos caminham juntos. Cidade acorda com seus mil ruídos. Esperança renasce a cada novo dia.",
+      "authorship": "AI",
+      "category": "poesia_contos",
+      "style": "formal",
+      "word_count": 126
+    },
+    {
+      "id": "ai_poem_3",
+      "content": "No silêncio noturno, a lua sorri.\nO vento murmura canções suaves.\nAs árvores guardam segredos antigos.\nOs rios seguem caminhos eternos.\nUma estrela brilha, tão distante.\nO horizonte desperta sonhos ocultos.\nFlores descansam sob sombras frágeis.\nO coração pulsa com desejo.\nA memória cria imagens delicadas.\nO tempo flui, mas permanece.\nA esperança cresce, mesmo discreta.\nO olhar procura sentido profundo.\nA palavra toca mundos invisíveis.\nO instante se dissolve lentamente.\nE a vida renasce, sempre fiel.",
+      "authorship": "AI",
+      "category": "poesia_contos",
+      "style": "formal",
+      "word_count": 77
+    },
+    {
+      "id": "ai_poem_4",
+      "content": "O sol brilha alto, céu azul vasto. O vento forte sopra lá, mar profundo agitado. Pedras velhas escuras jazem aqui, areia fina quente. O horizonte distante chama, sonhos velhos dormem. Nós observamos, ele pensa. A vida simples flui agora, tempo longo curto. A alma pequena grande, paz profunda.",
+      "authorship": "AI",
+      "category": "poesia_contos",
+      "style": "formal",
+      "word_count": 48
+    },
+    {
+      "id": "ai_poem_5",
+      "content": "Uma noite fria e escura, a única luz no quarto era a da velha luminária, emitindo um brilho fraco e amarelado sobre os papéis espalhados pela mesa de madeira rústica. O velho escritor, com seus dedos longos e finos, deslizava a caneta de pena sobre a folha em branco, mas o fluxo de ideias havia secado completamente. Ele suspirou fundo, sentindo o peso das muitas histórias inacabadas em sua alma cansada. Suas mãos tremulavam ligeiramente, um sinal da sua idade avançada e da luta contínua contra a falta de inspiração. O silêncio da casa era perturbador. Ele se levantou lentamente, caminhou até a janela e observou a chuva que caía suavemente, transformando a rua lá fora em um rio escuro e brilhante sob a luz dos postes. Essa cena melancólica parecia ser um reflexo direto de seu próprio estado de espírito. Ele voltou à mesa, determinado a encontrar uma nova direção, e pegou um livro antigo, com a capa desbotada, de um canto da estante. Suas páginas, amareladas pelo tempo, guardavam a promessa de novas palavras e talvez uma faísca perdida. A leitura seria o seu refúgio, a sua nova busca.",
+      "authorship": "AI",
+      "category": "poesia_contos",
+      "style": "formal",
+      "word_count": 191
     }
   ]
 }

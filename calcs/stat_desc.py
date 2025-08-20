@@ -159,13 +159,13 @@ coef_df = pd.DataFrame({
 results_df = coef_df.merge(vif_data, on="variavel")
 results_df.to_csv("regression_results_round1.csv", sep=";", decimal=",", float_format="%.3f", index=False, encoding="utf-8")
 
-# 12) Análise de mediação (bootstrap) usando pingouin
-try:
-    print("\nAnálise de mediação: Δ regressões → Δ naturalidade → Δ d_score")
-    med = pg.mediation_analysis(data=df_delta, x='delta_number_of_regressions_y',
-                                m='delta_naturalidade', y='delta_d_score', n_boot=5000)
-    print(med)
-    med.to_csv('mediation_regressions_naturalidade_dscore.csv', sep=';', decimal=',',
-               float_format='%.3f', encoding='utf-8', index=False)
-except ImportError:
-    print("\nPingouin não instalado: instale com `pip install pingouin` para executar análise de mediação.")
+# # 12) Análise de mediação (bootstrap) usando pingouin
+# try:
+#     print("\nAnálise de mediação: Δ regressões → Δ naturalidade → Δ d_score")
+#     med = pg.mediation_analysis(data=df_delta, x='delta_number_of_regressions_y',
+#                                 m='delta_naturalidade', y='delta_d_score', n_boot=5000)
+#     print(med)
+#     med.to_csv('mediation_regressions_naturalidade_dscore.csv', sep=';', decimal=',',
+#                float_format='%.3f', encoding='utf-8', index=False)
+# except ImportError:
+#     print("\nPingouin não instalado: instale com `pip install pingouin` para executar análise de mediação.")

@@ -77,8 +77,87 @@ document.addEventListener("DOMContentLoaded", async function() {
         allTexts = await loadTexts();
         
         // Seleciona um subconjunto de textos para este participante
-        participantTexts = selectRandomTexts(allTexts, 4); // 4 textos por participante
-        
+        /**
+         * Seleciona textos de forma balanceada: 2 categorias, 2 textos por categoria, autores diferentes dentro da categoria
+         * @param {Array} allTexts - Array de todos os textos disponíveis
+         * @param {number} count - Número total de textos a selecionar (deve ser múltiplo de 2)
+         * @returns {Array} Array de textos selecionados
+         */
+        function selectBalancedTexts(allTexts, count) {
+            // Verifica se count é par
+            if (count % 2 !== 0) {
+                throw new Error("O número de textos a selecionar deve ser par.");
+            }
+
+            // Agrupa textos por categoria
+            const textsByCategory = {};
+            allTexts.forEach(text => {
+                if (!textsByCategory[text.category]) {
+                    textsByCategory[text.category] = [];
+                }
+                textsByCategory[text.category].push(text);
+            });
+
+            // Filtra categorias que têm pelo menos 2 autores diferentes
+            const validCategories = {};
+            Object.keys(textsByCategory).forEach(category => {
+                const authors = new Set(textsByCategory[category].map(t => t.authorship));
+                if (authors.size >= 2) {
+                    validCategories[category] = textsByCategory[category];
+                }
+            });
+
+            // Se não houver categorias suficientes, lança erro
+            if (Object.keys(validCategories).length < count / 2) {
+                throw new Error(`Não há categorias suficientes com pelo menos 2 autores diferentes. Necessário: ${count/2}, Disponível: ${Object.keys(validCategories).length}`);
+            }
+
+            // Seleciona aleatoriamente count/2 categorias
+            const selectedCategories = jsPsych.randomization.sampleWithoutReplacement(Object.keys(validCategories), count / 2);
+
+            // Para cada categoria selecionada, seleciona 2 textos de autores diferentes
+            const selectedTexts = [];
+            selectedCategories.forEach(category => {
+                const categoryTexts = validCategories[category];
+                // Agrupa por autor
+                const textsByAuthor = {};
+                categoryTexts.forEach(text => {
+                    if (!textsByAuthor[text.authorship]) {
+                        textsByAuthor[text.authorship] = [];
+                    }
+                    textsByAuthor[text.authorship].push(text);
+                });
+
+                // Seleciona 2 autores aleatoriamente
+                const authors = Object.keys(textsByAuthor);
+                const selectedAuthors = jsPsych.randomization.sampleWithoutReplacement(authors, 2);
+
+                // Seleciona um texto aleatório de cada autor selecionado
+                selectedAuthors.forEach(author => {
+                    const authorTexts = textsByAuthor[author];
+                    const selectedText = jsPsych.randomization.sampleWithoutReplacement(authorTexts, 1)[0];
+                    selectedTexts.push(selectedText);
+                });
+            });
+
+            return selectedTexts;
+        }
+
+        // Seleciona um subconjunto de textos para este participante
+        try {
+            participantTexts = selectBalancedTexts(allTexts, 4); // 4 textos por participante, balanceados
+        } catch (error) {
+            console.error("Erro ao selecionar textos balanceados:", error);
+            document.getElementById("jspsych-target").innerHTML = `
+        <div style="text-align: center; margin-top: 50px;">
+            <h1>Erro na seleção dos textos</h1>
+            <p>Ocorreu um erro ao selecionar os textos para o experimento. Por favor, verifique o console para mais detalhes.</p>
+            <pre style="text-align: left; background: #f8f8f8; padding: 10px; border: 1px solid #ddd; margin: 20px; overflow: auto;">${error.message}\n${error.stack}</pre>
+        </div>
+    `;
+            return; // Encerra a inicialização
+        }
+
         // Constrói a timeline do experimento
         await buildTimeline();
 
@@ -113,7 +192,7 @@ async function buildTimeline() {
     addSelfPacedReadingPhase();
 
     // 4. Eye tracking
-    addEyeTrackingPhase();
+    await addEyeTrackingPhase();
 
     // 5. Teste de Associação Implícita (IAT)
     await addIATPhase();
@@ -247,7 +326,7 @@ function addSelfPacedReadingPhase() {
  * Adiciona a fase de eye tracking à timeline
  */
 async function addEyeTrackingPhase() {
-    // Seleciona a outra metade dos textos para o eye tracking
+    // Seleciona os textos para o eye tracking
     const eyeTrackingTexts = participantTexts.slice(0, 4);
 
     // Implementa o eye tracking
@@ -260,8 +339,7 @@ async function addEyeTrackingPhase() {
  */
 async function addIATPhase() {
     // Carrega estímulos do arquivo externo e gera trials
-    const response = await fetch('texts/example_texts.json');
-    const stimuli = await response.json();
+    const stimuli = participantTexts.slice(0, 4);
 
     // Cria timeline do IAT a partir dos estímulos carregados
     const iatTimeline = await buildIATTrials(stimuli);
@@ -286,3 +364,4 @@ function addFinalQuestionnaire() {
     const questionnaireTrials = createFinalQuestionnaire();
     timeline.push(...questionnaireTrials);
 }
+
