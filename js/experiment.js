@@ -80,14 +80,14 @@ function addWelcomeAndConsent() {
         stimulus: `
             <h1>Bem-vindo ao Experimento</h1>
             <p>Obrigado por participar deste estudo sobre processamento de textos.</p>
-            <p>Este experimento tem duração aproximada de 30 minutos.</p>
+            <p>Este experimento tem duração aproximada de 10 minutos.</p>
             <p>Clique em "Continuar" para prosseguir.</p>
         `,
         choices: ['Continuar']
     };
     timeline.push(welcome);
     
-    // Consentimento informado
+    // TCLE
     const consent = {
         type: jsPsychHtmlButtonResponse,
         stimulus: `
@@ -145,13 +145,13 @@ function addGeneralInstructions() {
             <div class="instructions">
                 <h2>Instruções Gerais</h2>
                 
-                <p>Este experimento está dividido em várias etapas:</p>
+                <p>Este experimento está dividido em algumas etapas:</p>
                 
                 <ol>
                     <li><strong>Leitura Automonitorada:</strong> Você lerá textos apresentados em segmentos (frases), avançando no seu próprio ritmo.</li>
                     <li><strong>Rastreamento Ocular:</strong> Você lerá textos completos enquanto seus movimentos oculares são registrados pela webcam.</li>
-                    <li><strong>Avaliações:</strong> Após cada texto, você responderá a perguntas sobre naturalidade, clareza e compreensão.</li>
                     <li><strong>Teste de Associação:</strong> Você classificará palavras e trechos de texto em categorias.</li>
+                     <li><strong>Avaliações:</strong> Após cada texto, você responderá a perguntas sobre naturalidade, clareza e compreensão.</li>
                     <li><strong>Identificação de Autoria:</strong> Você indicará se acredita que cada texto foi escrito por um humano ou por IA.</li>
                 </ol>
                 
@@ -206,9 +206,7 @@ function addEyeTrackingSetup() {
     };
     timeline.push(calibrationInstructions);
     
-    // Aqui seria adicionada a calibração real do WebGazer
-    // Como exemplo, estamos usando um placeholder simples
-    // Em um experimento real, você usaria os plugins específicos do WebGazer
+    // Aqui entra a calibração do WebGazer
     const calibrationPlaceholder = {
         type: jsPsychHtmlButtonResponse,
         stimulus: `
@@ -234,7 +232,7 @@ function addSelfPacedReadingBlock() {
         stimulus: `
             <div class="instructions">
                 <h2>Leitura Automonitorada</h2>
-                <p>Nesta parte do experimento, você lerá textos apresentados em segmentos (frases).</p>
+                <p>Nesta parte do experimento, você lerá textos apresentados em segmentos.</p>
                 <p>Cada segmento será apresentado um por vez.</p>
                 <p>Para avançar para o próximo segmento, pressione a <strong>barra de espaço</strong>.</p>
                 <p>Leia no seu ritmo natural, mas tente não fazer pausas desnecessárias entre os segmentos.</p>
