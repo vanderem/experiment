@@ -56,25 +56,39 @@ document.addEventListener("DOMContentLoaded", async function() {
 
                 // salvar no servidor
                 fetch('https://experimento-jp83.onrender.com/salvar-dados', {
-                //fetch('http://localhost:3000/salvar-dados', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         participant_id: participant_id,
+                        external_id: external_id, // ✅ agora enviamos também o ID externo
                         data: JSON.parse(dataJSON)
                     })
-                }).then(response => {
-                    if (!response.ok) throw new Error("Falha ao enviar dados");
-                    //console.log("Dados enviados com sucesso.");
-                    return response.json();
-                }).then(result => {
-                    console.log("Dados enviados e salvos como:", result.filename);
-                }).catch(error => {
-                    console.error("Erro ao enviar dados:", error);
-                });
+                })
+                    .then(response => {
+                        if (!response.ok) throw new Error("Falha ao enviar dados");
+                        return response.json();
+                    })
+                    .then(result => {
+                        console.log("Dados enviados e salvos como:", result.filename);
 
+                        // ✅ Se o servidor devolveu o redirectUrl (melhor prática)
+                        if (result.redirectUrl) {
+                            window.location.href = result.redirectUrl;
+                        }
+                        // ✅ Ou, se preferir montar direto aqui:
+                        else if (external_id) {
+                            const painelUrl = `https://www.surveytaking.com/processsurvey.php?status=complete&owid=${encodeURIComponent(external_id)}`;
+                            console.log("Redirecionando participante para:", painelUrl);
+                            window.location.href = painelUrl;
+                        } else {
+                            console.warn("Participante sem external_id; não foi possível redirecionar ao painel.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Erro ao enviar dados:", error);
+                    });
             },
             extensions: [
                 {type: jsPsychExtensionWebgazer}
@@ -83,8 +97,28 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         // gera uma string de 8 caracteres aleatórios para identificar o participante único
         var participant_id = jsPsych.randomization.randomID(8);
-        jsPsych.data.addProperties({ participant_id: participant_id });
+        //jsPsych.data.addProperties({ participant_id: participant_id });
         console.log("Seu participant_id é", participant_id);
+
+        // captura o ID externo do painel online
+        // --- Função para obter parâmetros da URL ---
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // --- Captura o ID externo (se existir) ---
+        var external_id = getQueryParam("owid");
+        // https://experimento-jp83.onrender.com/?owid=
+
+        // --- Adiciona ambos aos dados globais ---
+        jsPsych.data.addProperties({
+            participant_id: participant_id,
+            external_id: external_id
+        });
+
+        console.log("Seu participant_id é", participant_id);
+        if (external_id) console.log("External ID recebido:", external_id);
 
         console.log("jsPsych inicializado com sucesso");
         
@@ -417,6 +451,16 @@ function addWelcomeAndConsent() {
                 jsPsych.endExperiment(
                     "Obrigado pelo seu interesse. O experimento foi encerrado porque você não concordou com o termo de consentimento."
                 );
+
+                // Se existir um ID externo, redireciona o participante de volta para o painel
+                if (external_id) {
+                    const redirectUrl = `https://www.surveytaking.com/processsurvey.php?status=screened&owid=${external_id}`;
+                    window.location.href = redirectUrl;
+                } else {
+                    console.warn("Nenhum external_id encontrado — redirecionamento não realizado.");
+                }
+
+
                 return;
             }
 

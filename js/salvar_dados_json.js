@@ -39,11 +39,11 @@ app.post('/salvar-dados', async (req, res) => {
     const filePath = path.join(dataDir, filename);
 
     try {
-        console.log(`📥 Recebendo dados do participante ${participant_id}`);
+        console.log(` Recebendo dados do participante ${participant_id}`);
 
         // 1. Salvar localmente
         await fs.promises.writeFile(filePath, fileContent);
-        console.log(`✅ Arquivo salvo localmente: ${filename}`);
+        console.log(` Arquivo salvo localmente: ${filename}`);
 
         // 2. Salvar no Supabase
         const { error } = await supabase.storage
