@@ -9,6 +9,7 @@ let jsPsych;
 let timeline = [];
 let allTexts = [];
 let participantTexts = [];
+let external_id = null;
 
 // Gera timestamp ISO (com timezone do navegador)
 function nowISO() {
@@ -62,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                     },
                     body: JSON.stringify({
                         participant_id: participant_id,
-                        external_id: external_id, // ✅ agora enviamos também o ID externo
+                        external_id: external_id, // agora enviamos também o ID externo
                         data: JSON.parse(dataJSON)
                     })
                 })
@@ -108,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         }
 
         // --- Captura o ID externo (se existir) ---
-        var external_id = getQueryParam("owid");
+        external_id = getQueryParam("owid");
         // https://experimento-jp83.onrender.com/?owid=
 
         // --- Adiciona ambos aos dados globais ---
@@ -448,14 +449,39 @@ function addWelcomeAndConsent() {
             jsPsych.data.getLastTrialData().addToAll(fields);
 
             if (!agreed) {
-                jsPsych.endExperiment(
-                    "Obrigado pelo seu interesse. O experimento foi encerrado porque você não concordou com o termo de consentimento."
-                );
+                const messageDiv = document.createElement("div");
+                messageDiv.innerHTML = `
+                    <div style="
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      height: 100vh;
+                      font-family: sans-serif;
+                      text-align: center;
+                      background-color: #f8f8f8;
+                      color: #333;
+                      padding: 20px;
+                    ">
+                      <div>
+                        <h2>Obrigado pelo seu interesse</h2>
+                        <p>O experimento foi encerrado porque você não concordou com o termo de consentimento.</p>
+                      </div>
+                    </div>
+                  `;
+
+                // Limpa o conteúdo atual da página e mostra a mensagem
+                document.body.innerHTML = "";
+                document.body.appendChild(messageDiv);
+
+
+                //jsPsych.endExperiment(
+                //    "Obrigado pelo seu interesse. O experimento foi encerrado porque você não concordou com o termo de consentimento."
+                //);
 
                 // Se existir um ID externo, redireciona o participante de volta para o painel
                 if (external_id) {
                     const redirectUrl = `https://www.surveytaking.com/processsurvey.php?status=screened&owid=${external_id}`;
-                    window.location.href = redirectUrl;
+                    setTimeout(() => { window.location.href = redirectUrl; }, 300);
                 } else {
                     console.warn("Nenhum external_id encontrado — redirecionamento não realizado.");
                 }
