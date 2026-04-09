@@ -151,7 +151,7 @@ function addGeneralInstructions() {
                     <li><strong>Leitura Automonitorada:</strong> Você lerá textos apresentados em segmentos (frases), avançando no seu próprio ritmo.</li>
                     <li><strong>Rastreamento Ocular:</strong> Você lerá textos completos enquanto seus movimentos oculares são registrados pela webcam.</li>
                     <li><strong>Teste de Associação:</strong> Você classificará palavras e trechos de texto em categorias.</li>
-                     <li><strong>Avaliações:</strong> Após cada texto, você responderá a perguntas sobre naturalidade, clareza e compreensão.</li>
+                     <li><strong>Avaliações:</strong> Você responderá a perguntas sobre naturalidade, clareza e compreensão.</li>
                     <li><strong>Identificação de Autoria:</strong> Você indicará se acredita que cada texto foi escrito por um humano ou por IA.</li>
                 </ol>
                 

@@ -100,9 +100,7 @@ leitura_base = df_leitura.groupby(
     ["participant_id", "text_id", "text_authorship", "segment_index"], as_index=False
 ).agg({
     "reading_time_per_word": "mean",
-    "reading_time": "sum",
-    "number_of_fixations": "sum",
-    "number_of_regressions": "sum"
+    "reading_time": "sum"
 })
 
 # julgamentos por texto
@@ -188,7 +186,7 @@ tabela_geral = tabela_geral.sort_values(
     ["participant_id", "text_id", "segment_index"]
 )
 tabela_geral.to_csv(
-    "tabela_integrada_todos_participantes.csv",
+    "/Users/vander/PycharmProjects/Textos/jspsych-experiment 4/data/tabela_integrada_todos_participantes.csv",
     index=False,
     sep=';',
     decimal=','

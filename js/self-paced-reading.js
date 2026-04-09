@@ -80,7 +80,6 @@ function implementSelfPacedReading(texts) {
                 <p>Cada segmento será apresentado um por vez.</p>
                 <p>Para avançar para o próximo segmento, pressione a <strong>barra de espaço</strong>.</p>
                 <p>Leia no seu ritmo natural, mas tente não fazer pausas desnecessárias entre os segmentos.</p>
-                <p>Após cada texto, você responderá a algumas perguntas sobre ele.</p>
                 <p>Clique em "Começar" quando estiver pronto.</p>
             </div>
         `,

@@ -7,18 +7,18 @@ import pandas as pd
 import math
 
 # --- CONFIGURAÇÕES ---
-INPUT_DIR = "/Users/vander/PycharmProjects/Textos/jspsych-experiment 4/data"             # onde estão seus arquivos .json
+INPUT_DIR = "/Users/vander/PycharmProjects/Textos/jspsych-experiment 4/data"             # onde estão meus arquivos .json
 REJECTED_DIR = "/Users/vander/PycharmProjects/Textos/jspsych-experiment 4/data/rejeitados"    # onde os rejeitados vão parar
-LOG_FILE = "rejection_log.txt"
+LOG_FILE = "/Users/vander/PycharmProjects/Textos/jspsych-experiment 4/data/rejeitados/rejection_log.txt"
 VALIDATION_ANGLE_THRESHOLD = 4.0  # qualidade mínima aceitável
-EYE_DISTANCE_CM = 70  # distância olho-tela em cm
+EYE_DISTANCE_CM = 65  # distância olho-tela em cm
 PPI = 96  # pixels por polegada
 PX_PER_CM = PPI / 2.54  # pixels por centímetro
 
 # tabelinha do eye tracking pra não esquecer
-# ótimo ≤ 1.5° Alta confiabilidade
-# aceitável ≤ 4.0° Útil para regressão/fixação
-# precário > 4.0° Muito ruidoso, melhor descartar
+# mundo perfeito ≤ 1.5° Alta confiabilidade
+# aceitável ≤ 4° Útil para regressão/fixação
+# precário > 4° Muito ruidoso, melhor descartar, mas os dados dos outros testes, se válidos, podem ser usados ... pensar nisso para futuros artigos
 
 
 # Cria pasta de rejeitados e configura log

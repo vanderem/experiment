@@ -1,5 +1,5 @@
 # Biblioteca para mediação
-import pingouin as pg
+# import pingouin as pg
 import pandas as pd
 from scipy import stats
 from scipy.stats import wilcoxon
@@ -7,13 +7,96 @@ import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from statsmodels.stats.outliers_influence import variance_inflation_factor
 
-# 1) Ler sem header e ajustar manualmente
+# 1) Ler sem header e detectar automaticamente a linha do cabeçalho
+import numpy as np
+
 df_raw = pd.read_excel('/Users/vander/PycharmProjects/Textos/jspsych-experiment 4/data/dados_consolidados.xlsx', header=None)
-header = df_raw.iloc[1].tolist()
-df = df_raw[2:].copy()
+
+# Heurística para detectar a linha de cabeçalho entre as primeiras 10 linhas
+keywords = [
+    'autoria', 'author', 'texto', 'text', 'participant', 'participante', 'id',
+    'reading', 'tempo', 'naturalidade', 'clareza', 'compreensao',
+    'd_score', 'fixations', 'regressions', 'total'
+]
+
+best_row = 0
+best_score = -1
+max_check = min(10, len(df_raw))
+for r in range(max_check):
+    row_vals = df_raw.iloc[r].astype(str).str.lower().fillna('')
+    # pontuar por presença de palavras-chave
+    kw_hits = sum(any(k in cell for k in keywords) for cell in row_vals)
+    # penalizar linhas "numéricas demais"
+    non_numeric_ratio = np.mean(~row_vals.str.match(r'^-?\d+[\.,]?\d*$'))
+    score = kw_hits + non_numeric_ratio  # simples: mais palavras-chave e menos numérica
+    if score > best_score:
+        best_score = score
+        best_row = r
+
+header = df_raw.iloc[best_row].tolist()
+df = df_raw[best_row+1:].copy()
+
+# Aplicar header
 df.columns = header
+
+# Remover colunas sem nome e normalizar nomes das colunas
 df = df[df.columns[df.columns.notna()]]
+# Normalização: trim, lower, espaços -> underscore, remover caracteres não alfanuméricos
+df.columns = (
+    pd.Series(df.columns)
+      .astype(str)
+      .str.strip()
+      .str.lower()
+      .str.replace(r"\s+", "_", regex=True)
+      .str.replace(r"[^0-9a-zA-Z_]+", "", regex=True)
+)
+
 df = df.reset_index(drop=True)
+
+# Tentar mapear variações comuns de nomes para os obrigatórios
+rename_map = {}
+for col in list(df.columns):
+    if col in ["autoria_texto", "text_author", "author_type", "authorship", "textautor", "texto_autoria", "autoria", "tipo_autoria", "author"]:
+        rename_map[col] = "text_authorship"
+    if col in ["participant", "participantid", "id_participante", "idparticipante", "id_participant", "id", "prolific_id", "respondentid", "respondente_id"]:
+        rename_map[col] = "participant_id"
+if rename_map:
+    df = df.rename(columns=rename_map)
+
+# ===== Tentativa de derivação de colunas obrigatórias =====
+# Se existir coluna 'ai' com flags, derivar text_authorship
+if 'text_authorship' not in df.columns:
+    for cand in ['ai', 'is_ai', 'modelo', 'gerado_por_ai']:
+        if cand in df.columns:
+            val = df[cand].astype(str).str.lower().str.strip()
+            df['text_authorship'] = np.where(val.isin(['1','true','sim','ai','modelo','gerado','yes']), 'AI', 'human')
+            break
+
+# Se ainda não houver participant_id, escolher coluna com alta unicidade como ID
+if 'participant_id' not in df.columns:
+    candidate_ids = []
+    for col in df.columns:
+        # pular colunas óbvias que não são ID
+        if col in ['text_authorship','ai','is_ai','naturalidade','clareza','compreensao','d_score','reading_time','reading_time_per_word_x','reading_time_per_word_y','number_of_fixations_y','number_of_regressions_y','total_reading_time']:
+            continue
+        series = df[col].astype(str)
+        uniq_ratio = series.nunique(dropna=True) / max(1, len(series))
+        # IDs costumam ter alta unicidade e comprimento médio >= 6
+        avg_len = series.str.len().mean()
+        if uniq_ratio > 0.8 and avg_len >= 6:
+            candidate_ids.append((col, uniq_ratio, avg_len))
+    if candidate_ids:
+        candidate_ids.sort(key=lambda x: (x[1], x[2]), reverse=True)
+        df = df.rename(columns={candidate_ids[0][0]: 'participant_id'})
+
+# Checagem de sanidade
+required = ["text_authorship", "participant_id"]
+missing = [c for c in required if c not in df.columns]
+if missing:
+    raise KeyError(
+        f"Colunas obrigatórias ausentes após normalização/derivação: {missing}. "
+        f"Colunas disponíveis (amostra): {list(df.columns)[:30]} | Cabeçalho na linha {best_row}"
+    )
 
 # 2) Estatística descritiva das variáveis brutas por condição
 desc_vars = [
